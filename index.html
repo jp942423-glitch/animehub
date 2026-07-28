@@ -6,69 +6,21 @@
   <title>Anime Hub</title>
   <meta name="description" content="Anime episode guides, character bios, power rankings, and latest news.">
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #0d0d0d;
-      color: #fff;
-    }
-    header {
-      background: linear-gradient(135deg, #6d28d9, #ec4899);
-      padding: 25px;
-      text-align: center;
-    }
-    h1 {
-      color: #fff;
-      font-size: 2.5em;
-    }
-    section {
-      padding: 25px;
-    }
-    h2 {
-      color: #ff5050;
-      margin-bottom: 10px;
-    }
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background-color: #1a1a1a;
-      border-radius: 10px;
-      padding: 15px;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-      transition: transform 0.2s ease;
-    }
-    .card:hover {
-      transform: scale(1.05);
-    }
-    .card img {
-      width: 100%;
-      border-radius: 8px;
-    }
-    footer {
-      text-align: center;
-      padding: 15px;
-      background-color: #1a1a1a;
-      color: #aaa;
-    }
-    input {
-      width: 100%;
-      padding: 10px;
-      border-radius: 5px;
-      border: none;
-      margin-top: 10px;
-      font-size: 1em;
-    }
-    ul {
-      list-style: none;
-      margin-top: 10px;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; background-color: #0d0d0d; color: #fff; }
+    header { background: linear-gradient(135deg, #6d28d9, #ec4899); padding: 25px; text-align: center; }
+    h1 { color: #fff; font-size: 2.5em; }
+    section { padding: 25px; }
+    h2 { color: #ff5050; margin-bottom: 10px; }
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .card { background-color: #1a1a1a; border-radius: 10px; padding: 15px; box-shadow: 0 0 10px rgba(255,255,255,0.1); transition: transform 0.2s ease; }
+    .card:hover { transform: scale(1.05); }
+    .card img { width: 100%; border-radius: 8px; }
+    footer { text-align: center; padding: 15px; background-color: #1a1a1a; color: #aaa; }
+    input { width: 100%; padding: 10px; border-radius: 5px; border: none; margin-top: 10px; font-size: 1em; }
+    ul { list-style: none; margin-top: 10px; }
+    a { color: #60a5fa; text-decoration: none; }
+    a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
@@ -85,110 +37,89 @@
     <ul id="watchedList"></ul>
   </section>
 
-  <!-- EPISODE GUIDES -->
-  <section id="episodes">
-    <h2>Episode Guides & Release Dates</h2>
-    <div class="card-grid" id="episodeList">
-
-      <div class="card" data-anime="Solo Leveling">
+  <!-- ACTION GENRE -->
+  <section id="action">
+    <h2>Action Anime</h2>
+    <div class="card-grid">
+      <div class="card">
         <img src="https://cdn.myanimelist.net/images/anime/3/40451.jpg" alt="Solo Leveling">
-        <h3>Solo Leveling — Season 1</h3>
-        <p>Episodes 1–12 available now.</p>
+        <h3>Solo Leveling</h3>
+        <p>Language: Japanese / English Dub</p>
         <p>Status: Completed • Genre: Action, Fantasy</p>
+        <a href="https://www.crunchyroll.com/series/GY8VM8QWY/solo-leveling" target="_blank">Watch Official Site</a>
       </div>
-
-      <div class="card" data-anime="Demon Slayer">
+      <div class="card">
         <img src="https://cdn.myanimelist.net/images/anime/1286/99889.jpg" alt="Demon Slayer">
-        <h3>Demon Slayer — Swordsmith Village Arc</h3>
-        <p>Episodes 1–11 released.</p>
-        <p>Status: Completed • Next Arc: Hashira Training</p>
+        <h3>Demon Slayer</h3>
+        <p>Language: Japanese / Hindi / English</p>
+        <p>Status: Completed • Genre: Action, Adventure</p>
+        <a href="https://www.crunchyroll.com/series/GY5P48XEY/demon-slayer-kimetsu-no-yaiba" target="_blank">Watch Official Site</a>
       </div>
-
-      <div class="card" data-anime="Attack on Titan">
+      <div class="card">
         <img src="https://cdn.myanimelist.net/images/anime/10/47347.jpg" alt="Attack on Titan">
-        <h3>Attack on Titan — Final Season</h3>
-        <p>All episodes released.</p>
+        <h3>Attack on Titan</h3>
+        <p>Language: Japanese / English Dub</p>
         <p>Status: Completed • Genre: Dark Fantasy</p>
+        <a href="https://www.crunchyroll.com/series/GR751KNZY/attack-on-titan" target="_blank">Watch Official Site</a>
       </div>
-
-      <div class="card" data-anime="Black Clover">
+      <div class="card">
+        <img src="https://cdn.myanimelist.net/images/anime/1171/109222.jpg" alt="Jujutsu Kaisen">
+        <h3>Jujutsu Kaisen</h3>
+        <p>Language: Japanese / English / Hindi</p>
+        <p>Status: Completed • Genre: Action, Supernatural</p>
+        <a href="https://www.crunchyroll.com/series/GRDV0019R/jujutsu-kaisen" target="_blank">Watch Official Site</a>
+      </div>
+      <div class="card">
+        <img src="https://cdn.myanimelist.net/images/anime/6/73245.jpg" alt="One Piece">
+        <h3>One Piece</h3>
+        <p>Language: Japanese / English / Hindi</p>
+        <p>Status: Ongoing • Genre: Adventure, Fantasy</p>
+        <a href="https://www.crunchyroll.com/series/GRMGZEP1R/one-piece" target="_blank">Watch Official Site</a>
+      </div>
+      <div class="card">
         <img src="https://cdn.myanimelist.net/images/anime/2/81343.jpg" alt="Black Clover">
         <h3>Black Clover</h3>
-        <p>170 episodes available.</p>
+        <p>Language: Japanese / English</p>
         <p>Status: Ongoing • Genre: Action, Magic</p>
+        <a href="https://www.crunchyroll.com/series/GYVD0019R/black-clover" target="_blank">Watch Official Site</a>
       </div>
-
-      <div class="card" data-anime="Naruto Shippuden">
+      <div class="card">
         <img src="https://cdn.myanimelist.net/images/anime/5/17407.jpg" alt="Naruto Shippuden">
         <h3>Naruto Shippuden</h3>
-        <p>500 episodes available.</p>
+        <p>Language: Japanese / English / Hindi</p>
         <p>Status: Completed • Genre: Ninja, Adventure</p>
+        <a href="https://www.crunchyroll.com/series/GY8VM8QWY/naruto-shippuden" target="_blank">Watch Official Site</a>
       </div>
+    </div>
+  </section>
 
-      <div class="card" data-anime="One Piece">
-        <img src="https://cdn.myanimelist.net/images/anime/6/73245.jpg" alt="One Piece">
-        <h3>One Piece — Egghead Arc</h3>
-        <p>Over 1000 episodes available.</p>
-        <p>Status: Ongoing • Genre: Adventure, Fantasy</p>
-      </div>
-
-      <div class="card" data-anime="Jujutsu Kaisen">
-        <img src="https://cdn.myanimelist.net/images/anime/1171/109222.jpg" alt="Jujutsu Kaisen">
-        <h3>Jujutsu Kaisen — Season 2</h3>
-        <p>Episodes 1–23 released.</p>
-        <p>Status: Completed • Genre: Action, Supernatural</p>
-      </div>
-
-      <div class="card" data-anime="Solo Leveling Season 2">
+  <!-- FANTASY GENRE -->
+  <section id="fantasy">
+    <h2>Fantasy Anime</h2>
+    <div class="card-grid">
+      <div class="card">
         <img src="https://cdn.myanimelist.net/images/anime/3/40451.jpg" alt="Solo Leveling Season 2">
-        <h3>Solo Leveling — Season 2</h3>
-        <p>Coming soon in 2026.</p>
+        <h3>Solo Leveling Season 2</h3>
+        <p>Language: Japanese / English</p>
         <p>Status: Upcoming • Genre: Action, Fantasy</p>
+        <a href="https://www.crunchyroll.com/series/GY8VM8QWY/solo-leveling" target="_blank">Watch Official Site</a>
       </div>
-    </div>
-  </section>
-
-  <!-- CHARACTERS -->
-  <section id="characters">
-    <h2>Character Bios & Power Levels</h2>
-    <div class="card-grid" id="characterList">
-
-      <div class="card" data-character="Levi Ackerman">
-        <img src="https://cdn.myanimelist.net/images/characters/10/284121.jpg" alt="Levi Ackerman">
-        <h3>Levi Ackerman — Attack on Titan</h3>
-        <p>Humanity’s strongest soldier with unmatched speed and precision.</p>
-        <p>Power Level: S Tier</p>
+      <div class="card">
+        <img src="https://cdn.myanimelist.net/images/anime/10/47347.jpg" alt="Re:Zero">
+        <h3>Re:Zero − Starting Life in Another World</h3>
+        <p>Language: Japanese / English</p>
+        <p>Status: Ongoing • Genre: Fantasy, Drama</p>
+        <a href="https://www.crunchyroll.com/series/GY8VM8QWY/re-zero" target="_blank">Watch Official Site</a>
       </div>
-
-      <div class="card" data-character="Asta">
-        <img src="https://cdn.myanimelist.net/images/characters/3/333279.jpg" alt="Asta">
-        <h3>Asta — Black Clover</h3>
-        <p>Magicless warrior with anti‑magic swords.</p>
-        <p>Power Level: S Tier</p>
+      <div class="card">
+        <img src="https://cdn.myanimelist.net/images/anime/3/40451.jpg" alt="Mushoku Tensei">
+        <h3>Mushoku Tensei: Jobless Reincarnation</h3>
+        <p>Language: Japanese / English</p>
+        <p>Status: Ongoing • Genre: Fantasy, Adventure</p>
+        <a href="https://www.crunchyroll.com/series/GY8VM8QWY/mushoku-tensei" target="_blank">Watch Official Site</a>
       </div>
-
-      <div class="card" data-character="Naruto Uzumaki">
-        <img src="https://cdn.myanimelist.net/images/characters/10/284121.jpg" alt="Naruto Uzumaki">
-        <h3>Naruto Uzumaki — Naruto Shippuden</h3>
-        <p>Jinchuriki of Kurama and master of Sage Mode.</p>
-        <p>Power Level: SSS Tier</p>
-      </div>
-
-      <div class="card" data-character="Gojo Satoru">
-        <img src="https://cdn.myanimelist.net/images/characters/10/47347.jpg" alt="Gojo Satoru">
-        <h3>Gojo Satoru — Jujutsu Kaisen</h3>
-        <p>Strongest sorcerer with Six Eyes and Limitless technique.</p>
-        <p>Power Level: SSS Tier</p>
-      </div>
-
-      <div class="card" data-character="Luffy">
-        <img src="https://cdn.myanimelist.net/images/characters/10/284121.jpg" alt="Monkey D. Luffy">
-        <h3>Monkey D. Luffy — One Piece</h3>
-        <p>Captain of the Straw Hat Pirates, wielder of Gear 5.</p>
-        <p>Power Level: SSS Tier</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- POWER RANKINGS -->
-  <section id
+      <div class="card">
+        <img src="https://cdn.myanimelist.net/images/anime/1171/109222.jpg" alt="Solo Leveling">
+        <h3>Solo Leveling</h3>
+        <p>Language: Japanese / English</p>
+        <p>Status: Completed • Genre
