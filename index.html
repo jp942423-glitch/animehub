@@ -57,6 +57,18 @@
       background-color: #1a1a1a;
       color: #aaa;
     }
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      margin-top: 10px;
+      font-size: 1em;
+    }
+    ul {
+      list-style: none;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
@@ -65,62 +77,70 @@
     <p>Episodes, Characters, Power Rankings & News</p>
   </header>
 
+  <!-- ✅ Watched Anime Tracker -->
+  <section id="watched">
+    <h2>Mark Anime You’ve Watched</h2>
+    <p>Type the anime name you’ve finished and press Enter 👇</p>
+    <input type="text" id="watchedInput" placeholder="e.g. Solo Leveling, Naruto, One Piece">
+    <ul id="watchedList"></ul>
+  </section>
+
   <!-- EPISODE GUIDES -->
   <section id="episodes">
     <h2>Episode Guides & Release Dates</h2>
     <div class="card-grid" id="episodeList">
 
       <div class="card" data-anime="Solo Leveling">
-        <img src="https://upload.wikimedia.org/wikipedia/en/3/3f/Solo_Leveling_Anime_Key_Visual.jpg">
+        <img src="https://cdn.myanimelist.net/images/anime/3/40451.jpg" alt="Solo Leveling">
         <h3>Solo Leveling — Season 1</h3>
         <p>Episodes 1–12 available now.</p>
         <p>Status: Completed • Genre: Action, Fantasy</p>
       </div>
 
       <div class="card" data-anime="Demon Slayer">
-        <img src="https://upload.wikimedia.org/wikipedia/en/7/7e/Demon_Slayer_Swordsmith_Village_Arc.jpg">
+        <img src="https://cdn.myanimelist.net/images/anime/1286/99889.jpg" alt="Demon Slayer">
         <h3>Demon Slayer — Swordsmith Village Arc</h3>
         <p>Episodes 1–11 released.</p>
         <p>Status: Completed • Next Arc: Hashira Training</p>
       </div>
 
       <div class="card" data-anime="Attack on Titan">
-        <img src="https://upload.wikimedia.org/wikipedia/en/7/73/Attack_on_Titan_Season_4_Part_3.png">
+        <img src="https://cdn.myanimelist.net/images/anime/10/47347.jpg" alt="Attack on Titan">
         <h3>Attack on Titan — Final Season</h3>
         <p>All episodes released.</p>
         <p>Status: Completed • Genre: Dark Fantasy</p>
       </div>
 
       <div class="card" data-anime="Black Clover">
-        <img src="https://upload.wikimedia.org/wikipedia/en/6/6a/Black_Clover_volume_1.png">
+        <img src="https://cdn.myanimelist.net/images/anime/2/81343.jpg" alt="Black Clover">
         <h3>Black Clover</h3>
         <p>170 episodes available.</p>
         <p>Status: Ongoing • Genre: Action, Magic</p>
       </div>
 
       <div class="card" data-anime="Naruto Shippuden">
-        <img src="https://upload.wikimedia.org/wikipedia/en/7/7f/Naruto_Shippuden_Logo.png">
+        <img src="https://cdn.myanimelist.net/images/anime/5/17407.jpg" alt="Naruto Shippuden">
         <h3>Naruto Shippuden</h3>
         <p>500 episodes available.</p>
         <p>Status: Completed • Genre: Ninja, Adventure</p>
       </div>
 
       <div class="card" data-anime="One Piece">
-        <img src="https://upload.wikimedia.org/wikipedia/en/6/6f/One_Piece_Logo.svg">
+        <img src="https://cdn.myanimelist.net/images/anime/6/73245.jpg" alt="One Piece">
         <h3>One Piece — Egghead Arc</h3>
         <p>Over 1000 episodes available.</p>
         <p>Status: Ongoing • Genre: Adventure, Fantasy</p>
       </div>
 
       <div class="card" data-anime="Jujutsu Kaisen">
-        <img src="https://upload.wikimedia.org/wikipedia/en/3/3f/Jujutsu_Kaisen_Season_2_Key_Visual.jpg">
+        <img src="https://cdn.myanimelist.net/images/anime/1171/109222.jpg" alt="Jujutsu Kaisen">
         <h3>Jujutsu Kaisen — Season 2</h3>
         <p>Episodes 1–23 released.</p>
         <p>Status: Completed • Genre: Action, Supernatural</p>
       </div>
 
       <div class="card" data-anime="Solo Leveling Season 2">
-        <img src="https://upload.wikimedia.org/wikipedia/en/3/3f/Solo_Leveling_Anime_Key_Visual.jpg">
+        <img src="https://cdn.myanimelist.net/images/anime/3/40451.jpg" alt="Solo Leveling Season 2">
         <h3>Solo Leveling — Season 2</h3>
         <p>Coming soon in 2026.</p>
         <p>Status: Upcoming • Genre: Action, Fantasy</p>
@@ -134,35 +154,35 @@
     <div class="card-grid" id="characterList">
 
       <div class="card" data-character="Levi Ackerman">
-        <img src="https://upload.wikimedia.org/wikipedia/en/7/7e/Levi_Ackerman.png">
+        <img src="https://cdn.myanimelist.net/images/characters/10/284121.jpg" alt="Levi Ackerman">
         <h3>Levi Ackerman — Attack on Titan</h3>
         <p>Humanity’s strongest soldier with unmatched speed and precision.</p>
         <p>Power Level: S Tier</p>
       </div>
 
       <div class="card" data-character="Asta">
-        <img src="https://upload.wikimedia.org/wikipedia/en/3/3f/Asta_Black_Clover.png">
+        <img src="https://cdn.myanimelist.net/images/characters/3/333279.jpg" alt="Asta">
         <h3>Asta — Black Clover</h3>
         <p>Magicless warrior with anti‑magic swords.</p>
         <p>Power Level: S Tier</p>
       </div>
 
       <div class="card" data-character="Naruto Uzumaki">
-        <img src="https://upload.wikimedia.org/wikipedia/en/9/9f/Naruto_Uzumaki.png">
+        <img src="https://cdn.myanimelist.net/images/characters/10/284121.jpg" alt="Naruto Uzumaki">
         <h3>Naruto Uzumaki — Naruto Shippuden</h3>
         <p>Jinchuriki of Kurama and master of Sage Mode.</p>
         <p>Power Level: SSS Tier</p>
       </div>
 
       <div class="card" data-character="Gojo Satoru">
-        <img src="https://upload.wikimedia.org/wikipedia/en/9/9a/Satoru_Gojo.png">
+        <img src="https://cdn.myanimelist.net/images/characters/10/47347.jpg" alt="Gojo Satoru">
         <h3>Gojo Satoru — Jujutsu Kaisen</h3>
         <p>Strongest sorcerer with Six Eyes and Limitless technique.</p>
         <p>Power Level: SSS Tier</p>
       </div>
 
       <div class="card" data-character="Luffy">
-        <img src="https://upload.wikimedia.org/wikipedia/en/2/29/Monkey_D_Luffy.png">
+        <img src="https://cdn.myanimelist.net/images/characters/10/284121.jpg" alt="Monkey D. Luffy">
         <h3>Monkey D. Luffy — One Piece</h3>
         <p>Captain of the Straw Hat Pirates, wielder of Gear 5.</p>
         <p>Power Level: SSS Tier</p>
@@ -171,19 +191,4 @@
   </section>
 
   <!-- POWER RANKINGS -->
-  <section id="power">
-    <h2>Power Rankings</h2>
-    <ul id="powerList">
-      <li>SSS Tier – Naruto (Baryon Mode), Gojo, Luffy (Gear 5), Sung Jinwoo</li>
-      <li>SS Tier – Levi Ackerman, Asta (Devil Union), Tanjiro (Sun Breathing)</li>
-      <li>S Tier – Zenitsu, Yami, Kakashi (DMS), Rimuru Tempest</li>
-    </ul>
-  </section>
-
-  <!-- NEWS -->
-  <section id="news">
-    <h2>Latest Anime News</h2>
-    <ul id="newsList">
-      <li>Black Clover movie sequel rumored for 2026.</li>
-      <li>Naruto 20th anniversary special episodes announced.</li>
-      <li>Attack on Titan creator hints at new side stories.</li>
+  <section id
