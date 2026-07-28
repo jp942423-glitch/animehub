@@ -2,237 +2,170 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Anime Hub – Episodes, Characters & Power Levels</title>
-  <meta name="description" content="Anime episode guides, character info, power rankings and release dates.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anime Hub</title>
+  <meta name="description" content="Anime episode guides, character bios, power rankings, and latest news.">
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
     }
-
     body {
-      background: #050816;
-      color: #f5f5f5;
+      font-family: Arial, sans-serif;
+      background-color: #0d0d0d;
+      color: #fff;
     }
-
     header {
       background: linear-gradient(135deg, #6d28d9, #ec4899);
-      padding: 20px 40px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      padding: 25px;
+      text-align: center;
     }
-
-    header h1 {
-      font-size: 26px;
+    h1 {
+      color: #fff;
+      font-size: 2.5em;
     }
-
-    nav {
-      margin-top: 10px;
-    }
-
-    nav a {
-      color: #f5f5f5;
-      text-decoration: none;
-      margin-right: 15px;
-      font-size: 14px;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    main {
-      max-width: 1000px;
-      margin: 20px auto;
-      padding: 0 15px;
-    }
-
     section {
-      margin-bottom: 40px;
-      padding: 20px;
-      background: #0b1120;
-      border-radius: 10px;
-      border: 1px solid #1f2937;
+      padding: 25px;
     }
-
-    section h2 {
+    h2 {
+      color: #ff5050;
       margin-bottom: 10px;
-      color: #a5b4fc;
     }
-
-    .tagline {
-      margin-top: 5px;
-      font-size: 14px;
-      color: #9ca3af;
-    }
-
-    ul {
-      margin-top: 10px;
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 6px;
-    }
-
     .card-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 15px;
-      margin-top: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
-
     .card {
-      background: #020617;
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      transition: transform 0.2s ease;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card img {
+      width: 100%;
       border-radius: 8px;
-      padding: 12px;
-      border: 1px solid #1f2937;
     }
-
-    .card h3 {
-      margin-bottom: 6px;
-      color: #f97316;
-      font-size: 16px;
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 2px 8px;
-      border-radius: 999px;
-      font-size: 11px;
-      background: #1d4ed8;
-      margin-left: 5px;
-    }
-
-    .power {
-      font-size: 13px;
-      color: #facc15;
-      margin-top: 4px;
-    }
-
-    .episode-meta {
-      font-size: 12px;
-      color: #9ca3af;
-      margin-top: 4px;
-    }
-
     footer {
       text-align: center;
-      padding: 20px;
-      font-size: 13px;
-      color: #6b7280;
-    }
-
-    .search-box {
-      margin-top: 10px;
-    }
-
-    .search-box input {
-      width: 100%;
-      padding: 8px 10px;
-      border-radius: 6px;
-      border: 1px solid #374151;
-      background: #020617;
-      color: #f5f5f5;
-    }
-
-    .search-box input::placeholder {
-      color: #6b7280;
-    }
-
-    .highlight {
-      color: #22c55e;
-      font-weight: bold;
+      padding: 15px;
+      background-color: #1a1a1a;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
-
-<header>
-  <h1>Anime Hub</h1>
-  <p class="tagline">Episode guides • Character info • Power rankings</p>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#episodes">Episode Guides</a>
-    <a href="#characters">Characters</a>
-    <a href="#power">Power Rankings</a>
-    <a href="#news">News</a>
-  </nav>
-</header>
-
-<main>
-  <!-- HOME -->
-  <section id="home">
-    <h2>Welcome to Anime Hub</h2>
-    <p>
-      Your place for quick <span class="highlight">episode release dates</span>, 
-      <span class="highlight">character info</span>, and 
-      <span class="highlight">power scaling</span> for popular anime.
-    </p>
-
-    <div class="search-box">
-      <input id="searchInput" type="text" placeholder="Search anime, character or episode...">
-    </div>
-
-    <ul>
-      <li>Updated episode guides for trending series.</li>
-      <li>Character bios with abilities and power levels.</li>
-      <li>Simple explanations of complex anime plots.</li>
-    </ul>
-  </section>
+  <header>
+    <h1>Anime Hub</h1>
+    <p>Episodes, Characters, Power Rankings & News</p>
+  </header>
 
   <!-- EPISODE GUIDES -->
   <section id="episodes">
     <h2>Episode Guides & Release Dates</h2>
-    <p class="tagline">Quick overview of recent and upcoming episodes.</p>
-
     <div class="card-grid" id="episodeList">
+
       <div class="card" data-anime="Solo Leveling">
-        <h3>Solo Leveling – Season 1</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/en/3/3f/Solo_Leveling_Anime_Key_Visual.jpg">
+        <h3>Solo Leveling — Season 1</h3>
         <p>Episodes 1–12 available now.</p>
-        <p class="episode-meta">Status: Completed • Genre: Action, Fantasy</p>
+        <p>Status: Completed • Genre: Action, Fantasy</p>
       </div>
 
       <div class="card" data-anime="Demon Slayer">
-        <h3>Demon Slayer – Swordsmith Village Arc</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/en/7/7e/Demon_Slayer_Swordsmith_Village_Arc.jpg">
+        <h3>Demon Slayer — Swordsmith Village Arc</h3>
         <p>Episodes 1–11 released.</p>
-        <p class="episode-meta">Status: Completed • Next arc: Hashira Training</p>
+        <p>Status: Completed • Next Arc: Hashira Training</p>
+      </div>
+
+      <div class="card" data-anime="Attack on Titan">
+        <img src="https://upload.wikimedia.org/wikipedia/en/7/73/Attack_on_Titan_Season_4_Part_3.png">
+        <h3>Attack on Titan — Final Season</h3>
+        <p>All episodes released.</p>
+        <p>Status: Completed • Genre: Dark Fantasy</p>
+      </div>
+
+      <div class="card" data-anime="Black Clover">
+        <img src="https://upload.wikimedia.org/wikipedia/en/6/6a/Black_Clover_volume_1.png">
+        <h3>Black Clover</h3>
+        <p>170 episodes available.</p>
+        <p>Status: Ongoing • Genre: Action, Magic</p>
+      </div>
+
+      <div class="card" data-anime="Naruto Shippuden">
+        <img src="https://upload.wikimedia.org/wikipedia/en/7/7f/Naruto_Shippuden_Logo.png">
+        <h3>Naruto Shippuden</h3>
+        <p>500 episodes available.</p>
+        <p>Status: Completed • Genre: Ninja, Adventure</p>
+      </div>
+
+      <div class="card" data-anime="One Piece">
+        <img src="https://upload.wikimedia.org/wikipedia/en/6/6f/One_Piece_Logo.svg">
+        <h3>One Piece — Egghead Arc</h3>
+        <p>Over 1000 episodes available.</p>
+        <p>Status: Ongoing • Genre: Adventure, Fantasy</p>
       </div>
 
       <div class="card" data-anime="Jujutsu Kaisen">
-        <h3>Jujutsu Kaisen – Shibuya Incident</h3>
-        <p>Full arc available.</p>
-        <p class="episode-meta">Status: Completed • Genre: Dark Fantasy</p>
+        <img src="https://upload.wikimedia.org/wikipedia/en/3/3f/Jujutsu_Kaisen_Season_2_Key_Visual.jpg">
+        <h3>Jujutsu Kaisen — Season 2</h3>
+        <p>Episodes 1–23 released.</p>
+        <p>Status: Completed • Genre: Action, Supernatural</p>
+      </div>
+
+      <div class="card" data-anime="Solo Leveling Season 2">
+        <img src="https://upload.wikimedia.org/wikipedia/en/3/3f/Solo_Leveling_Anime_Key_Visual.jpg">
+        <h3>Solo Leveling — Season 2</h3>
+        <p>Coming soon in 2026.</p>
+        <p>Status: Upcoming • Genre: Action, Fantasy</p>
       </div>
     </div>
   </section>
 
   <!-- CHARACTERS -->
   <section id="characters">
-    <h2>Character Info & Abilities</h2>
-    <p class="tagline">Basic bios you can expand later.</p>
-
+    <h2>Character Bios & Power Levels</h2>
     <div class="card-grid" id="characterList">
-      <div class="card" data-character="Sung Jinwoo">
-        <h3>Sung Jinwoo <span class="badge">Solo Leveling</span></h3>
-        <p>From weakest hunter to overpowered Shadow Monarch.</p>
-        <p class="power">Power Level: SSS • Role: Protagonist</p>
+
+      <div class="card" data-character="Levi Ackerman">
+        <img src="https://upload.wikimedia.org/wikipedia/en/7/7e/Levi_Ackerman.png">
+        <h3>Levi Ackerman — Attack on Titan</h3>
+        <p>Humanity’s strongest soldier with unmatched speed and precision.</p>
+        <p>Power Level: S Tier</p>
       </div>
 
-      <div class="card" data-character="Tanjiro Kamado">
-        <h3>Tanjiro Kamado <span class="badge">Demon Slayer</span></h3>
-        <p>Kind-hearted demon slayer with Sun Breathing.</p>
-        <p class="power">Power Level: High Hashira-tier (late series)</p>
+      <div class="card" data-character="Asta">
+        <img src="https://upload.wikimedia.org/wikipedia/en/3/3f/Asta_Black_Clover.png">
+        <h3>Asta — Black Clover</h3>
+        <p>Magicless warrior with anti‑magic swords.</p>
+        <p>Power Level: S Tier</p>
+      </div>
+
+      <div class="card" data-character="Naruto Uzumaki">
+        <img src="https://upload.wikimedia.org/wikipedia/en/9/9f/Naruto_Uzumaki.png">
+        <h3>Naruto Uzumaki — Naruto Shippuden</h3>
+        <p>Jinchuriki of Kurama and master of Sage Mode.</p>
+        <p>Power Level: SSS Tier</p>
       </div>
 
       <div class="card" data-character="Gojo Satoru">
-        <h3>Gojo Satoru <span class="badge">Jujutsu Kaisen</span></h3>
-        <p>Strongest sorcerer with Limitless and Six Eyes.</p>
-        <p class="power">Power Level: Top-tier, near broken</p>
+        <img src="https://upload.wikimedia.org/wikipedia/en/9/9a/Satoru_Gojo.png">
+        <h3>Gojo Satoru — Jujutsu Kaisen</h3>
+        <p>Strongest sorcerer with Six Eyes and Limitless technique.</p>
+        <p>Power Level: SSS Tier</p>
+      </div>
+
+      <div class="card" data-character="Luffy">
+        <img src="https://upload.wikimedia.org/wikipedia/en/2/29/Monkey_D_Luffy.png">
+        <h3>Monkey D. Luffy — One Piece</h3>
+        <p>Captain of the Straw Hat Pirates, wielder of Gear 5.</p>
+        <p>Power Level: SSS Tier</p>
       </div>
     </div>
   </section>
@@ -240,54 +173,17 @@
   <!-- POWER RANKINGS -->
   <section id="power">
     <h2>Power Rankings</h2>
-    <p class="tagline">Simple tier list you can edit as you watch more anime.</p>
-
     <ul id="powerList">
-      <li>SSS Tier – Reality bending / god-like (e.g., Sung Jinwoo late game).</li>
-      <li>SS Tier – Broken abilities, near unbeatable (e.g., Gojo Satoru).</li>
-      <li>S Tier – Top fighters in their verse (e.g., Hashira-level demon slayers).</li>
-      <li>A Tier – Strong but not broken, advanced fighters.</li>
-      <li>B Tier – Skilled but mid-level combatants.</li>
+      <li>SSS Tier – Naruto (Baryon Mode), Gojo, Luffy (Gear 5), Sung Jinwoo</li>
+      <li>SS Tier – Levi Ackerman, Asta (Devil Union), Tanjiro (Sun Breathing)</li>
+      <li>S Tier – Zenitsu, Yami, Kakashi (DMS), Rimuru Tempest</li>
     </ul>
   </section>
 
   <!-- NEWS -->
   <section id="news">
-    <h2>Anime News & Updates</h2>
-    <p class="tagline">You can manually update this section when new seasons drop.</p>
-
+    <h2>Latest Anime News</h2>
     <ul id="newsList">
-      <li>New Solo Leveling season rumored – update this when confirmed.</li>
-      <li>Next Demon Slayer arc: Hashira Training – add episode dates here.</li>
-      <li>Jujutsu Kaisen future content – add movie or season info.</li>
-    </ul>
-  </section>
-</main>
-
-<footer>
-  <p>Made by an anime fan. Update this site as new episodes and seasons release.</p>
-</footer>
-
-<script>
-  // Simple search filter for episodes and characters
-  const searchInput = document.getElementById('searchInput');
-  const episodeCards = document.querySelectorAll('#episodeList .card');
-  const characterCards = document.querySelectorAll('#characterList .card');
-
-  searchInput.addEventListener('input', function () {
-    const query = this.value.toLowerCase();
-
-    episodeCards.forEach(card => {
-      const text = card.innerText.toLowerCase();
-      card.style.display = text.includes(query) ? 'block' : 'none';
-    });
-
-    characterCards.forEach(card => {
-      const text = card.innerText.toLowerCase();
-      card.style.display = text.includes(query) ? 'block' : 'none';
-    });
-  });
-</script>
-
-</body>
-</html>
+      <li>Black Clover movie sequel rumored for 2026.</li>
+      <li>Naruto 20th anniversary special episodes announced.</li>
+      <li>Attack on Titan creator hints at new side stories.</li>
