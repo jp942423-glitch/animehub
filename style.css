@@ -1,158 +1,157 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AnimeVerse</title>
-  <meta name="description" content="Discover anime, build your watchlist, track progress, rate shows and explore trending series.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
-</head>
+/* ===========================
+   AnimeVerse Style - Part 1
+   Reset + Navbar + Hero
+=========================== */
 
-<body>
-  <!-- ================= NAVIGATION ================= -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">
-        <i class="fa-solid fa-dragon"></i>
-        <span>AnimeVerse</span>
-      </div>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#trending">Trending</a></li>
-        <li><a href="#toprated">Top Rated</a></li>
-        <li><a href="#genres">Genres</a></li>
-        <li><a href="#watchlist">Watch List</a></li>
-        <li><a href="#dashboard">Dashboard</a></li>
-      </ul>
-      <div class="nav-icons">
-        <button id="themeToggle"><i class="fa-solid fa-moon"></i></button>
-        <button id="menuBtn"><i class="fa-solid fa-bars"></i></button>
-      </div>
-    </nav>
-  </header>
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <!-- ================= HERO ================= -->
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <h1>Track Every Anime You Love</h1>
-      <p>Create your personal anime collection, discover trending shows, rate series, track episodes, and never forget where you stopped watching.</p>
-      <div class="hero-buttons">
-        <button id="exploreBtn">Explore Anime</button>
-        <button id="randomBtn">Random Anime</button>
-      </div>
-    </div>
-    <div class="hero-image">
-      <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=80" alt="Anime Banner">
-    </div>
-  </section>
+html {
+  scroll-behavior: smooth;
+}
 
-  <!-- ================= SEARCH ================= -->
-  <section class="search-section">
-    <div class="search-box">
-      <i class="fa-solid fa-magnifying-glass"></i>
-      <input type="text" id="searchInput" placeholder="Search anime...">
-    </div>
-    <div class="filters">
-      <select id="genreFilter">
-        <option value="all">All Genres</option>
-        <option>Action</option>
-        <option>Adventure</option>
-        <option>Fantasy</option>
-        <option>Comedy</option>
-        <option>Romance</option>
-        <option>Sci-Fi</option>
-        <option>Mystery</option>
-        <option>Drama</option>
-        <option>Slice of Life</option>
-        <option>Sports</option>
-      </select>
-      <select id="statusFilter">
-        <option value="all">All Status</option>
-        <option>Watching</option>
-        <option>Completed</option>
-        <option>Plan to Watch</option>
-        <option>Dropped</option>
-        <option>On Hold</option>
-      </select>
-      <select id="sortFilter">
-        <option value="rating">Highest Rated</option>
-        <option value="name">A-Z</option>
-        <option value="year">Newest</option>
-      </select>
-    </div>
-  </section>
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0d0d0d;
+  color: #fff;
+  line-height: 1.6;
+}
 
-  <!-- ================= TRENDING ================= -->
-  <section id="trending" class="section">
-    <div class="section-title">
-      <h2>🔥 Trending This Season</h2>
-      <a href="#">View All</a>
-    </div>
-    <div id="trendingContainer" class="anime-grid">
-      <!-- Anime cards will be added dynamically -->
-    </div>
-  </section>
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #6d28d9, #ec4899);
+  border-radius: 4px;
+}
 
-  <!-- ================= TOP RATED ================= -->
-  <section id="toprated" class="section">
-    <div class="section-title">
-      <h2>⭐ Top Rated Anime</h2>
-      <a href="#">View All</a>
-    </div>
-    <div id="topRatedContainer" class="anime-grid">
-      <!-- Anime cards will be added dynamically -->
-    </div>
-  </section>
+/* ===== Navbar ===== */
+header {
+  background: linear-gradient(135deg, #6d28d9, #ec4899);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-  <!-- ================= GENRES ================= -->
-  <section id="genres" class="section">
-    <div class="genre-grid">
-      <button class="genre-btn">Action</button>
-      <button class="genre-btn">Adventure</button>
-      <button class="genre-btn">Fantasy</button>
-      <button class="genre-btn">Comedy</button>
-      <button class="genre-btn">Romance</button>
-      <button class="genre-btn">Sci-Fi</button>
-      <button class="genre-btn">Sports</button>
-      <button class="genre-btn">Mystery</button>
-      <button class="genre-btn">Drama</button>
-      <button class="genre-btn">Horror</button>
-    </div>
-  </section>
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+}
 
-  <!-- ================= WATCH LIST ================= -->
-  <section id="watchlist" class="section">
-    <h2>Your Watch List</h2>
-    <div class="watch-input">
-      <input type="text" id="watchInput" placeholder="Add anime...">
-      <button id="addAnime">Add</button>
-    </div>
-    <div id="watchList"></div>
-  </section>
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #fff;
+}
 
-  <!-- ================= DASHBOARD ================= -->
-  <section id="dashboard" class="section">
-    <h2>Your Statistics</h2>
-    <div class="stats-grid">
-      <div class="stat-card"><h3 id="totalAnime">0</h3><p>Total Anime</p></div>
-      <div class="stat-card"><h3 id="completedAnime">0</h3><p>Completed</p></div>
-      <div class="stat-card"><h3 id="watchingAnime">0</h3><p>Watching</p></div>
-      <div class="stat-card"><h3 id="episodesWatched">0</h3><p>Episodes Watched</p></div>
-    </div>
-  </section>
+.logo i {
+  margin-right: 10px;
+  color: #ff5050;
+}
 
-  <footer>
-    <p>© 2026 AnimeVerse — Made with ❤️ for anime fans.</p>
-  </footer>
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
 
-  <!-- ===== PLACEHOLDER FOR NEXT PARTS ===== -->
-  <!-- Part 2A–F: style.css -->
-  <!-- Part 3A–B: anime.js -->
-  <!-- Part 4A–C: script.js -->
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ff5050;
+}
+
+.nav-icons button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.3em;
+  cursor: pointer;
+  margin-left: 15px;
+  transition: transform 0.2s ease;
+}
+
+.nav-icons button:hover {
+  transform: scale(1.2);
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 40px;
+  background: radial-gradient(circle at top left, #1a1a1a, #0d0d0d);
+}
+
+.hero-content {
+  flex: 1 1 45%;
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 2.8em;
+  font-weight: 700;
+  color: #ff5050;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.1em;
+  color: #ccc;
+  margin-bottom: 25px;
+}
+
+.hero-buttons button {
+  background: linear-gradient(135deg, #6d28d9, #ec4899);
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 15px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.hero-buttons button:hover {
+  background: linear-gradient(135deg, #ec4899, #6d28d9);
+  transform: scale(1.05);
+}
+
+.hero-image {
+  flex: 1 1 45%;
+  text-align: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* ===== PLACEHOLDER FOR NEXT PART ===== */
+/* Part 2B: Search + Filters + Anime Cards */
+/* Part 2C: Genres + Watch List */
+/* Part 2D: Dashboard + Footer */
+/* Part 2E: Animations + Dark Mode */
+/* Part 2F: Responsive Design */
 /* ===========================
    AnimeVerse Style - Part 2B
    Search + Filters + Anime Cards
@@ -273,6 +272,3 @@
   color: #ccc;
   font-size: 0.9em;
 }
-
-</body>
-</html>
