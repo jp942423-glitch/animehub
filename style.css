@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AnimeVerse</title>
+  <meta name="description" content="Discover anime, build your watchlist, track progress, rate shows and explore trending series.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- ================= NAVIGATION ================= -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <i class="fa-solid fa-dragon"></i>
+        <span>AnimeVerse</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#trending">Trending</a></li>
+        <li><a href="#toprated">Top Rated</a></li>
+        <li><a href="#genres">Genres</a></li>
+        <li><a href="#watchlist">Watch List</a></li>
+        <li><a href="#dashboard">Dashboard</a></li>
+      </ul>
+      <div class="nav-icons">
+        <button id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+        <button id="menuBtn"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Track Every Anime You Love</h1>
+      <p>Create your personal anime collection, discover trending shows, rate series, track episodes, and never forget where you stopped watching.</p>
+      <div class="hero-buttons">
+        <button id="exploreBtn">Explore Anime</button>
+        <button id="randomBtn">Random Anime</button>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=80" alt="Anime Banner">
+    </div>
+  </section>
+
+  <!-- ================= SEARCH ================= -->
+  <section class="search-section">
+    <div class="search-box">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" id="searchInput" placeholder="Search anime...">
+    </div>
+    <div class="filters">
+      <select id="genreFilter">
+        <option value="all">All Genres</option>
+        <option>Action</option>
+        <option>Adventure</option>
+        <option>Fantasy</option>
+        <option>Comedy</option>
+        <option>Romance</option>
+        <option>Sci-Fi</option>
+        <option>Mystery</option>
+        <option>Drama</option>
+        <option>Slice of Life</option>
+        <option>Sports</option>
+      </select>
+      <select id="statusFilter">
+        <option value="all">All Status</option>
+        <option>Watching</option>
+        <option>Completed</option>
+        <option>Plan to Watch</option>
+        <option>Dropped</option>
+        <option>On Hold</option>
+      </select>
+      <select id="sortFilter">
+        <option value="rating">Highest Rated</option>
+        <option value="name">A-Z</option>
+        <option value="year">Newest</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- ================= TRENDING ================= -->
+  <section id="trending" class="section">
+    <div class="section-title">
+      <h2>🔥 Trending This Season</h2>
+      <a href="#">View All</a>
+    </div>
+    <div id="trendingContainer" class="anime-grid">
+      <!-- Anime cards will be added dynamically -->
+    </div>
+  </section>
+
+  <!-- ================= TOP RATED ================= -->
+  <section id="toprated" class="section">
+    <div class="section-title">
+      <h2>⭐ Top Rated Anime</h2>
+      <a href="#">View All</a>
+    </div>
+    <div id="topRatedContainer" class="anime-grid">
+      <!-- Anime cards will be added dynamically -->
+    </div>
+  </section>
+
+  <!-- ================= GENRES ================= -->
+  <section id="genres" class="section">
+    <div class="genre-grid">
+      <button class="genre-btn">Action</button>
+      <button class="genre-btn">Adventure</button>
+      <button class="genre-btn">Fantasy</button>
+      <button class="genre-btn">Comedy</button>
+      <button class="genre-btn">Romance</button>
+      <button class="genre-btn">Sci-Fi</button>
+      <button class="genre-btn">Sports</button>
+      <button class="genre-btn">Mystery</button>
+      <button class="genre-btn">Drama</button>
+      <button class="genre-btn">Horror</button>
+    </div>
+  </section>
+
+  <!-- ================= WATCH LIST ================= -->
+  <section id="watchlist" class="section">
+    <h2>Your Watch List</h2>
+    <div class="watch-input">
+      <input type="text" id="watchInput" placeholder="Add anime...">
+      <button id="addAnime">Add</button>
+    </div>
+    <div id="watchList"></div>
+  </section>
+
+  <!-- ================= DASHBOARD ================= -->
+  <section id="dashboard" class="section">
+    <h2>Your Statistics</h2>
+    <div class="stats-grid">
+      <div class="stat-card"><h3 id="totalAnime">0</h3><p>Total Anime</p></div>
+      <div class="stat-card"><h3 id="completedAnime">0</h3><p>Completed</p></div>
+      <div class="stat-card"><h3 id="watchingAnime">0</h3><p>Watching</p></div>
+      <div class="stat-card"><h3 id="episodesWatched">0</h3><p>Episodes Watched</p></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 AnimeVerse — Made with ❤️ for anime fans.</p>
+  </footer>
+
+  <!-- ===== PLACEHOLDER FOR NEXT PARTS ===== -->
+  <!-- Part 2A–F: style.css -->
+  <!-- Part 3A–B: anime.js -->
+  <!-- Part 4A–C: script.js -->
+
+</body>
+</html>
