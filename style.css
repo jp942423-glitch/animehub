@@ -153,6 +153,126 @@
   <!-- Part 2A–F: style.css -->
   <!-- Part 3A–B: anime.js -->
   <!-- Part 4A–C: script.js -->
+/* ===========================
+   AnimeVerse Style - Part 2B
+   Search + Filters + Anime Cards
+=========================== */
+
+/* ===== Search Section ===== */
+.search-section {
+  padding: 30px 40px;
+  background: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #0d0d0d;
+  border-radius: 8px;
+  padding: 10px 15px;
+}
+
+.search-box i {
+  color: #ff5050;
+  margin-right: 10px;
+}
+
+.search-box input {
+  flex: 1;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1em;
+  outline: none;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.filters select {
+  background: #0d0d0d;
+  color: #fff;
+  border: 1px solid #333;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border 0.3s ease;
+}
+
+.filters select:hover {
+  border-color: #ff5050;
+}
+
+/* ===== Section Titles ===== */
+.section {
+  padding: 40px;
+}
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.section-title h2 {
+  color: #ff5050;
+  font-weight: 700;
+}
+
+.section-title a {
+  color: #60a5fa;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.section-title a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Anime Cards ===== */
+.anime-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.anime-card {
+  background: #1a1a1a;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.anime-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.anime-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.anime-card h3 {
+  color: #fff;
+  font-size: 1.1em;
+  margin-bottom: 5px;
+}
+
+.anime-card p {
+  color: #ccc;
+  font-size: 0.9em;
+}
 
 </body>
 </html>
