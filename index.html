@@ -21,6 +21,9 @@
     ul { list-style: none; margin-top: 10px; }
     a { color: #60a5fa; text-decoration: none; }
     a:hover { text-decoration: underline; }
+    nav { background-color: #1a1a1a; padding: 10px; text-align: center; position: sticky; top: 0; z-index: 100; }
+    nav a { margin: 0 15px; color: #fff; font-weight: bold; }
+    nav a:hover { color: #ff5050; }
   </style>
 </head>
 <body>
@@ -29,12 +32,40 @@
     <p>Episodes, Characters, Power Rankings & News</p>
   </header>
 
+  <!-- ✅ Navigation Bar -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#action">Action</a>
+    <a href="#fantasy">Fantasy</a>
+    <a href="#comedy">Comedy</a>
+    <a href="#romance">Romance</a>
+    <a href="#scifi">Sci-Fi</a>
+    <a href="#sliceoflife">Slice of Life</a>
+    <a href="#mystery">Mystery</a>
+    <a href="#watchlist">Watch List</a>
+  </nav>
+
+  <!-- ✅ Home Section -->
+  <section id="home">
+    <h2>Welcome to Anime Hub</h2>
+    <p>Explore your favorite anime by genre, track what you’ve watched, and build your personal watch list!</p>
+    <p>Click <a href="#watchlist">here</a> to open your Watch List.</p>
+  </section>
+
   <!-- ✅ Watched Anime Tracker -->
   <section id="watched">
     <h2>Mark Anime You’ve Watched</h2>
     <p>Type the anime name you’ve finished and press Enter 👇</p>
     <input type="text" id="watchedInput" placeholder="e.g. Solo Leveling, Naruto, One Piece">
     <ul id="watchedList"></ul>
+  </section>
+
+  <!-- ✅ Watch List Section -->
+  <section id="watchlist">
+    <h2>Your Watch List</h2>
+    <p>Type the anime name you’ve watched and press Enter 👇</p>
+    <input type="text" id="watchInput" placeholder="e.g. Solo Leveling, Naruto, One Piece">
+    <ul id="watchList"></ul>
   </section>
 
   <!-- ACTION GENRE -->
@@ -90,36 +121,164 @@
         <p>Status: Completed • Genre: Ninja, Adventure</p>
         <a href="https://www.crunchyroll.com/series/GY8VM8QWY/naruto-shippuden" target="_blank">Watch Official Site</a>
       </div>
+        </div>
+  </section>
+
+  <!-- COMEDY GENRE -->
+  <section id="comedy">
+    <h2>Comedy Anime</h2>
+    <div class="card-grid">
+      <div class="card">
+        <img src="https://cdn.myanimelist.net/images/anime/13/17405.jpg" alt="Gintama">
+        <h3>Gintama</h3>
+        <p>Language: Japanese / English</p>
+        <p>Status: Completed • Genre: Comedy, Action</p>
+        <a href="https://www.crunchyroll.com/series/GY8VM8QWY/gintama" target="_blank">Watch Official Site</a>
+      </div>
+      <div class="card">
+        <img src="https://cdn.myanimelist.net/images/anime/3/40451.jpg" alt="Konosuba">
+        <h3>Konosuba: God's Blessing on This Wonderful World!</h3>
+        <p>Language: Japanese / English</p>
+        <p>Status: Completed • Genre: Comedy, Fantasy</p>
+        <a href="https://www.crunchyroll.com/series/GY8VM8QWY/konosuba" target="_blank">Watch Official Site</a>
+      </div>
     </div>
   </section>
 
-  <!-- FANTASY GENRE -->
-  <section id="fantasy">
-    <h2>Fantasy Anime</h2>
+  <!-- ROMANCE GENRE -->
+  <section id="romance">
+    <h2>Romance Anime</h2>
     <div class="card-grid">
       <div class="card">
-        <img src="https://cdn.myanimelist.net/images/anime/3/40451.jpg" alt="Solo Leveling Season 2">
-        <h3>Solo Leveling Season 2</h3>
+        <img src="https://cdn.myanimelist.net/images/anime/3/40451.jpg" alt="Your Name">
+        <h3>Your Name</h3>
         <p>Language: Japanese / English</p>
-        <p>Status: Upcoming • Genre: Action, Fantasy</p>
-        <a href="https://www.crunchyroll.com/series/GY8VM8QWY/solo-leveling" target="_blank">Watch Official Site</a>
+        <p>Status: Completed • Genre: Romance, Drama</p>
+        <a href="https://www.netflix.com/title/80161371" target="_blank">Watch Official Site</a>
       </div>
       <div class="card">
-        <img src="https://cdn.myanimelist.net/images/anime/10/47347.jpg" alt="Re:Zero">
-        <h3>Re:Zero − Starting Life in Another World</h3>
+        <img src="https://cdn.myanimelist.net/images/anime/5/17407.jpg" alt="Toradora">
+        <h3>Toradora!</h3>
         <p>Language: Japanese / English</p>
-        <p>Status: Ongoing • Genre: Fantasy, Drama</p>
-        <a href="https://www.crunchyroll.com/series/GY8VM8QWY/re-zero" target="_blank">Watch Official Site</a>
+        <p>Status: Completed • Genre: Romance, Comedy</p>
+        <a href="https://www.crunchyroll.com/series/GY8VM8QWY/toradora" target="_blank">Watch Official Site</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCI-FI GENRE -->
+  <section id="scifi">
+    <h2>Sci-Fi Anime</h2>
+    <div class="card-grid">
+      <div class="card">
+        <img src="https://cdn.myanimelist.net/images/anime/5/17407.jpg" alt="Steins;Gate">
+        <h3>Steins;Gate</h3>
+        <p>Language: Japanese / English</p>
+        <p>Status: Completed • Genre: Sci-Fi, Thriller</p>
+        <a href="https://www.crunchyroll.com/series/GY8VM8QWY/steins-gate" target="_blank">Watch Official Site</a>
       </div>
       <div class="card">
-        <img src="https://cdn.myanimelist.net/images/anime/3/40451.jpg" alt="Mushoku Tensei">
-        <h3>Mushoku Tensei: Jobless Reincarnation</h3>
+        <img src="https://cdn.myanimelist.net/images/anime/1171/109222.jpg" alt="Darling in the FranXX">
+        <h3>Darling in the FranXX</h3>
         <p>Language: Japanese / English</p>
-        <p>Status: Ongoing • Genre: Fantasy, Adventure</p>
-        <a href="https://www.crunchyroll.com/series/GY8VM8QWY/mushoku-tensei" target="_blank">Watch Official Site</a>
+        <p>Status: Completed • Genre: Sci-Fi, Romance</p>
+        <a href="https://www.crunchyroll.com/series/GY8VM8QWY/darling-in-the-franxx" target="_blank">Watch Official Site</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLICE OF LIFE GENRE -->
+  <section id="sliceoflife">
+    <h2>Slice of Life Anime</h2>
+    <div class="card-grid">
+      <div class="card">
+        <img src="https://cdn.myanimelist.net/images/anime/3/40451.jpg" alt="Clannad">
+        <h3>Clannad</h3>
+        <p>Language: Japanese / English</p>
+        <p>Status: Completed • Genre: Slice of Life, Drama</p>
+        <a href="https://www.crunchyroll.com/series/GY8VM8QWY/clannad" target="_blank">Watch Official Site</a>
       </div>
       <div class="card">
-        <img src="https://cdn.myanimelist.net/images/anime/1171/109222.jpg" alt="Solo Leveling">
-        <h3>Solo Leveling</h3>
+        <img src="https://cdn.myanimelist.net/images/anime/1171/109222.jpg" alt="March Comes in Like a Lion">
+        <h3>March Comes in Like a Lion</h3>
         <p>Language: Japanese / English</p>
-        <p>Status: Completed • Genre
+        <p>Status: Completed • Genre: Slice of Life, Psychological</p>
+        <a href="https://www.crunchyroll.com/series/GY8VM8QWY/march-comes-in-like-a-lion" target="_blank">Watch Official Site</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MYSTERY GENRE -->
+  <section id="mystery">
+    <h2>Mystery Anime</h2>
+    <div class="card-grid">
+      <div class="card">
+        <img src="https://cdn.myanimelist.net/images/anime/5/17407.jpg" alt="Death Note">
+        <h3>Death Note</h3>
+        <p>Language: Japanese / English / Hindi</p>
+        <p>Status: Completed • Genre: Mystery, Thriller</p>
+        <a href="https://www.netflix.com/title/70204970" target="_blank">Watch Official Site</a>
+      </div>
+      <div class="card">
+        <img src="https://cdn.myanimelist.net/images/anime/1171/109222.jpg" alt="Erased">
+        <h3>Erased</h3>
+        <p>Language: Japanese / English</p>
+        <p>Status: Completed • Genre: Mystery, Drama</p>
+        <a href="https://www.crunchyroll.com/series/GY8VM8QWY/erased" target="_blank">Watch Official Site</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Made by jp942423-glitch • Anime Hub © 2026</p>
+  </footer>
+
+  <!-- ✅ Combined Script -->
+  <script>
+    // Watched Anime Tracker
+    const watchedInput = document.getElementById('watchedInput');
+    const watchedList = document.getElementById('watchedList');
+    watchedInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter' && watchedInput.value.trim() !== '') {
+        const li = document.createElement('li');
+        li.textContent = watchedInput.value.trim();
+        li.style.color = '#ff5050';
+        li.style.fontWeight = 'bold';
+        watchedList.appendChild(li);
+        watchedInput.value = '';
+      }
+    });
+
+    // Watch List Feature with Save + Remove
+    const watchInput = document.getElementById('watchInput');
+    const watchList = document.getElementById('watchList');
+    let savedList = JSON.parse(localStorage.getItem('watchList')) || [];
+    savedList.forEach(anime => addAnime(anime));
+
+    watchInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter' && watchInput.value.trim() !== '') {
+        const anime = watchInput.value.trim();
+        addAnime(anime);
+        savedList.push(anime);
+        localStorage.setItem('watchList', JSON.stringify(savedList));
+        watchInput.value = '';
+      }
+    });
+
+    function addAnime(name) {
+      const li = document.createElement('li');
+      li.textContent = name;
+      li.style.color = '#ff5050';
+      li.style.fontWeight = 'bold';
+      li.style.cursor = 'pointer';
+      li.title = 'Click to remove';
+      li.addEventListener('click', () => {
+        savedList = savedList.filter(a => a !== name);
+        localStorage.setItem('watchList', JSON.stringify(savedList));
+        li.remove();
+      });
+      watchList.appendChild(li);
+    }
+  </script>
+</body>
+</html>
