@@ -1,247 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AnimeVerse</title>
-<meta name="description" content="Discover anime, build your watchlist, track progress, rate shows and explore trending series.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Poppins',sans-serif;background-color:#0d0d0d;color:#fff;line-height:1.6}
-::-webkit-scrollbar{width:8px}
-::-webkit-scrollbar-thumb{background:linear-gradient(135deg,#6d28d9,#ec4899);border-radius:4px}
-
-/* ===== Navbar ===== */
-header{background:linear-gradient(135deg,#6d28d9,#ec4899);position:sticky;top:0;z-index:1000}
-.navbar{display:flex;justify-content:space-between;align-items:center;padding:15px 40px}
-.logo{display:flex;align-items:center;font-size:1.5em;font-weight:700;color:#fff}
-.logo i{margin-right:10px;color:#ff5050}
-.nav-links{list-style:none;display:flex;gap:25px}
-.nav-links li a{color:#fff;text-decoration:none;font-weight:500;transition:color .3s ease}
-.nav-links li a:hover{color:#ff5050}
-.nav-icons button{background:none;border:none;color:#fff;font-size:1.3em;cursor:pointer;margin-left:15px;transition:transform .2s ease}
-.nav-icons button:hover{transform:scale(1.2)}
-
-/* ===== Hero ===== */
-.hero{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:60px 40px;background:radial-gradient(circle at top left,#1a1a1a,#0d0d0d)}
-.hero-content{flex:1 1 45%;max-width:600px}
-.hero-content h1{font-size:2.8em;font-weight:700;color:#ff5050;margin-bottom:20px}
-.hero-content p{font-size:1.1em;color:#ccc;margin-bottom:25px}
-.hero-buttons button{background:linear-gradient(135deg,#6d28d9,#ec4899);color:#fff;border:none;padding:12px 25px;border-radius:6px;font-weight:600;cursor:pointer;margin-right:15px;transition:background .3s ease,transform .2s ease}
-.hero-buttons button:hover{background:linear-gradient(135deg,#ec4899,#6d28d9);transform:scale(1.05)}
-.hero-image{flex:1 1 45%;text-align:center}
-.hero-image img{width:100%;max-width:500px;border-radius:10px;box-shadow:0 0 20px rgba(255,255,255,.1)}
-
-/* ===== Search ===== */
-.search-section{padding:30px 40px;background:#1a1a1a;display:flex;flex-direction:column;gap:20px}
-.search-box{display:flex;align-items:center;background:#0d0d0d;border-radius:8px;padding:10px 15px}
-.search-box i{color:#ff5050;margin-right:10px}
-.search-box input{flex:1;background:none;border:none;color:#fff;font-size:1em;outline:none}
-.filters{display:flex;flex-wrap:wrap;gap:15px}
-.filters select{background:#0d0d0d;color:#fff;border:1px solid #333;padding:8px 12px;border-radius:6px;font-weight:500}
-
-/* ===== Sections ===== */
-.section{padding:40px}
-.section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
-.section-title h2{color:#ff5050}
-.section-title a{color:#60a5fa;text-decoration:none}
-.anime-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
-.anime-card{background:#1a1a1a;border-radius:10px;padding:15px;text-align:center;transition:transform .2s ease}
-.anime-card:hover{transform:scale(1.05)}
-.anime-card img{width:100%;border-radius:8px;margin-bottom:10px}
-.anime-card h3{color:#fff;font-size:1.1em;margin-bottom:5px}
-.anime-card p{color:#ccc;font-size:.9em}
-
-/* ===== Genre Buttons ===== */
-.genre-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:15px}
-.genre-btn{background:linear-gradient(135deg,#6d28d9,#ec4899);color:#fff;border:none;padding:10px;border-radius:6px;font-weight:600;cursor:pointer;transition:transform .2s ease}
-.genre-btn:hover{transform:scale(1.05)}
-
-/* ===== Watch List ===== */
-.watch-input{display:flex;gap:10px;margin-bottom:20px}
-.watch-input input{flex:1;padding:10px;border-radius:6px;border:none;background:#0d0d0d;color:#fff}
-.watch-input button{background:linear-gradient(135deg,#6d28d9,#ec4899);color:#fff;border:none;padding:10px 20px;border-radius:6px;font-weight:600;cursor:pointer}
-.watch-item{display:flex;justify-content:space-between;align-items:center;background:#1a1a1a;padding:10px 15px;border-radius:6px;margin-bottom:10px}
-.remove-btn{background:#ff5050;border:none;color:#fff;padding:5px 10px;border-radius:4px;cursor:pointer}
-.remove-btn:hover{background:#ec4899}
-
-/* ===== Dashboard ===== */
-.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px}
-.stat-card{background:#1a1a1a;border-radius:10px;padding:20px;text-align:center}
-.stat-card h3{color:#ff5050;font-size:2em;margin-bottom:10px}
-.stat-card p{color:#ccc}
-
-/* ===== Footer ===== */
-footer{text-align:center;padding:20px;background:#1a1a1a;color:#aaa}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AnimeVerse</title>
+  <meta name="description" content="Discover anime, build your watchlist, track progress, rate shows and explore trending series.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<header>
-<nav class="navbar">
-<div class="logo"><i class="fa-solid fa-dragon"></i><span>AnimeVerse</span></div>
-<ul class="nav-links">
-<li><a href="#home">Home</a></li>
-<li><a href="#trending">Trending</a></li>
-<li><a href="#toprated">Top Rated</a></li>
-<li><a href="#genres">Genres</a></li>
-<li><a href="#watchlist">Watch List</a></li>
-<li><a href="#dashboard">Dashboard</a></li>
-</ul>
-<div class="nav-icons">
-<button id="themeToggle"><i class="fa-solid fa-moon"></i></button>
-<button id="menuBtn"><i class="fa-solid fa-bars"></i></button>
-</div>
-</nav>
-</header>
+  <!-- ================= NAVIGATION ================= -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <i class="fa-solid fa-dragon"></i>
+        <span>AnimeVerse</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#trending">Trending</a></li>
+        <li><a href="#toprated">Top Rated</a></li>
+        <li><a href="#genres">Genres</a></li>
+        <li><a href="#watchlist">Watch List</a></li>
+        <li><a href="#dashboard">Dashboard</a></li>
+      </ul>
+      <div class="nav-icons">
+        <button id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+        <button id="menuBtn"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </nav>
+  </header>
 
-<section class="hero" id="home">
-<div class="hero-content">
-<h1>Track Every Anime You Love</h1>
-<p>Create your personal anime collection, discover trending shows, rate series, track episodes, and never forget where you stopped watching.</p>
-<div class="hero-buttons">
-<button id="exploreBtn">Explore Anime</button>
-<button id="randomBtn">Random Anime</button>
-</div>
-</div>
-<div class="hero-image">
-<img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=80" alt="Anime Banner">
-</div>
-</section>
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Track Every Anime You Love</h1>
+      <p>Create your personal anime collection, discover trending shows, rate series, track episodes, and never forget where you stopped watching.</p>
+      <div class="hero-buttons">
+        <button id="exploreBtn">Explore Anime</button>
+        <button id="randomBtn">Random Anime</button>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=80" alt="Anime Banner">
+    </div>
+  </section>
 
-<section class="search-section">
-<div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input type="text" id="searchInput" placeholder="Search anime..."></div>
-<div class="filters">
-<select id="genreFilter"><option value="all">All Genres</option><option>Action</option><option>Adventure</option><option>Fantasy</option><option>Comedy</option><option>Romance</option><option>Sci-Fi</option><option>Mystery</option><option>Drama</option><option>Slice of Life</option><option>Sports</option></select>
-<select id="statusFilter>
-  <select id="sortFilter">
-<option value="rating">Highest Rated</option>
-<option value="name">A-Z</option>
-<option value="year">Newest</option>
-</select>
-</div>
-</section>
+  <!-- ================= SEARCH ================= -->
+  <section class="search-section">
+    <div class="search-box">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" id="searchInput" placeholder="Search anime...">
+    </div>
+    <div class="filters">
+      <select id="genreFilter">
+        <option value="all">All Genres</option>
+        <option>Action</option>
+        <option>Adventure</option>
+        <option>Fantasy</option>
+        <option>Comedy</option>
+        <option>Romance</option>
+        <option>Sci-Fi</option>
+        <option>Mystery</option>
+        <option>Drama</option>
+        <option>Slice of Life</option>
+        <option>Sports</option>
+      </select>
+      <select id="statusFilter">
+        <option value="all">All Status</option>
+        <option>Watching</option>
+        <option>Completed</option>
+        <option>Plan to Watch</option>
+        <option>Dropped</option>
+        <option>On Hold</option>
+      </select>
+      <select id="sortFilter">
+        <option value="rating">Highest Rated</option>
+        <option value="name">A-Z</option>
+        <option value="year">Newest</option>
+      </select>
+    </div>
+  </section>
 
-<!-- ================= TRENDING ================= -->
-<section id="trending" class="section">
-<div class="section-title">
-<h2>🔥 Trending This Season</h2>
-<a href="#">View All</a>
-</div>
-<div id="trendingContainer" class="anime-grid">
-<div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/3/40451.jpg" alt="Solo Leveling"><h3>Solo Leveling</h3><p>Action • Fantasy • 2024</p></div>
-<div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/1286/99889.jpg" alt="Demon Slayer"><h3>Demon Slayer</h3><p>Adventure • Dark Fantasy • 2019</p></div>
-<div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/10/47347.jpg" alt="Attack on Titan"><h3>Attack on Titan</h3><p>Action • Drama • 2013</p></div>
-<div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/2/81343.jpg" alt="Black Clover"><h3>Black Clover</h3><p>Magic • Adventure • 2017</p></div>
-<div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/1171/109222.jpg" alt="Jujutsu Kaisen"><h3>Jujutsu Kaisen</h3><p>Supernatural • Action • 2020</p></div>
-</div>
-</section>
+  <!-- ================= TRENDING ================= -->
+  <section id="trending" class="section">
+    <div class="section-title">
+      <h2>🔥 Trending This Season</h2>
+      <a href="#">View All</a>
+    </div>
+    <div id="trendingContainer" class="anime-grid">
+      <!-- Anime cards will be added dynamically -->
+    </div>
+  </section>
 
-<!-- ================= TOP RATED ================= -->
-<section id="toprated" class="section">
-<div class="section-title">
-<h2>⭐ Top Rated Anime</h2>
-<a href="#">View All</a>
-</div>
-<div id="topRatedContainer" class="anime-grid">
-<div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/5/17407.jpg" alt="Naruto Shippuden"><h3>Naruto Shippuden</h3><p>Ninja • Adventure • 2007</p></div>
-<div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/12/17405.jpg" alt="Tokyo Ghoul"><h3>Tokyo Ghoul</h3><p>Horror • Action • 2014</p></div>
-<div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/1171/109222.jpg" alt="Erased"><h3>Erased</h3><p>Mystery • Drama • 2016</p></div>
-<div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/3/40451.jpg" alt="Your Name"><h3>Your Name</h3><p>Romance • Drama • 2016</p></div>
-<div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/5/17407.jpg" alt="Steins;Gate"><h3>Steins;Gate</h3><p>Sci‑Fi • Thriller • 2011</p></div>
-</div>
-</section>
+  <!-- ================= TOP RATED ================= -->
+  <section id="toprated" class="section">
+    <div class="section-title">
+      <h2>⭐ Top Rated Anime</h2>
+      <a href="#">View All</a>
+    </div>
+    <div id="topRatedContainer" class="anime-grid">
+      <!-- Anime cards will be added dynamically -->
+    </div>
+  </section>
 
-<!-- ================= GENRES ================= -->
-<section id="genres" class="section">
-<div class="genre-grid">
-<button class="genre-btn">Action</button>
-<button class="genre-btn">Adventure</button>
-<button class="genre-btn">Fantasy</button>
-<button class="genre-btn">Comedy</button>
-<button class="genre-btn">Romance</button>
-<button class="genre-btn">Sci‑Fi</button>
-<button class="genre-btn">Sports</button>
-<button class="genre-btn">Mystery</button>
-<button class="genre-btn">Drama</button>
-<button class="genre-btn">Horror</button>
-</div>
-</section>
+  <!-- ================= GENRES ================= -->
+  <section id="genres" class="section">
+    <div class="genre-grid">
+      <button class="genre-btn">Action</button>
+      <button class="genre-btn">Adventure</button>
+      <button class="genre-btn">Fantasy</button>
+      <button class="genre-btn">Comedy</button>
+      <button class="genre-btn">Romance</button>
+      <button class="genre-btn">Sci-Fi</button>
+      <button class="genre-btn">Sports</button>
+      <button class="genre-btn">Mystery</button>
+      <button class="genre-btn">Drama</button>
+      <button class="genre-btn">Horror</button>
+    </div>
+  </section>
 
-<!-- ================= WATCH LIST ================= -->
-<section id="watchlist" class="section">
-<h2>Your Watch List</h2>
-<div class="watch-input">
-<input type="text" id="watchInput" placeholder="Add anime...">
-<button id="addAnime">Add</button>
-</div>
-<div id="watchList"></div>
-</section>
+  <!-- ================= WATCH LIST ================= -->
+  <section id="watchlist" class="section">
+    <h2>Your Watch List</h2>
+    <div class="watch-input">
+      <input type="text" id="watchInput" placeholder="Add anime...">
+      <button id="addAnime">Add</button>
+    </div>
+    <div id="watchList"></div>
+  </section>
 
-<!-- ================= DASHBOARD ================= -->
-<section id="dashboard" class="section">
-<h2>Your Statistics</h2>
-<div class="stats-grid">
-<div class="stat-card"><h3 id="totalAnime">0</h3><p>Total Anime</p></div>
-<div class="stat-card"><h3 id="completedAnime">0</h3><p>Completed</p></div>
-<div class="stat-card"><h3 id="watchingAnime">0</h3><p>Watching</p></div>
-<div class="stat-card"><h3 id="episodesWatched">0</h3><p>Episodes Watched</p></div>
-</div>
-</section>
+  <!-- ================= DASHBOARD ================= -->
+  <section id="dashboard" class="section">
+    <h2>Your Statistics</h2>
+    <div class="stats-grid">
+      <div class="stat-card"><h3 id="totalAnime">0</h3><p>Total Anime</p></div>
+      <div class="stat-card"><h3 id="completedAnime">0</h3><p>Completed</p></div>
+      <div class="stat-card"><h3 id="watchingAnime">0</h3><p>Watching</p></div>
+      <div class="stat-card"><h3 id="episodesWatched">0</h3><p>Episodes Watched</p></div>
+    </div>
+  </section>
 
-<footer>
-<p>© 2026 AnimeVerse — Made with ❤️ for anime fans.</p>
-</footer>
+  <footer>
+    <p>© 2026 AnimeVerse — Made with ❤️ for anime fans.</p>
+  </footer>
 
-<script>
-// ===== Watch List System =====
-const watchInput = document.getElementById('watchInput');
-const addAnimeBtn = document.getElementById('addAnime');
-const watchListDiv = document.getElementById('watchList');
-let watchList = JSON.parse(localStorage.getItem('watchList')) || [];
+  <!-- ===== PLACEHOLDER FOR NEXT PARTS ===== -->
+  <!-- Part 2A–F: style.css -->
+  <!-- Part 3A–B: anime.js -->
+  <!-- Part 4A–C: script.js -->
 
-function renderWatchList() {
-  watchListDiv.innerHTML = '';
-  watchList.forEach((anime, index) => {
-    const item = document.createElement('div');
-    item.className = 'watch-item';
-    item.innerHTML = `<span>${anime}</span><button class="remove-btn" data-index="${index}">Remove</button>`;
-    watchListDiv.appendChild(item);
-  });
-  updateDashboard();
-}
-
-function updateDashboard() {
-  document.getElementById('totalAnime').textContent = watchList.length;
-  document.getElementById('completedAnime').textContent = Math.floor(watchList.length / 2);
-  document.getElementById('watchingAnime').textContent = Math.ceil(watchList.length / 3);
-  document.getElementById('episodesWatched').textContent = watchList.length * 12;
-}
-
-addAnimeBtn.addEventListener('click', () => {
-  const animeName = watchInput.value.trim();
-  if (animeName && !watchList.includes(animeName)) {
-    watchList.push(animeName);
-    localStorage.setItem('watchList', JSON.stringify(watchList));
-    watchInput.value = '';
-    renderWatchList();
-  }
-});
-
-watchListDiv.addEventListener('click', (e) => {
-  if (e.target.classList.contains('remove-btn')) {
-    const index = e.target.dataset.index;
-    watchList.splice(index, 1);
-    localStorage.setItem('watchList', JSON.stringify(watchList));
-    renderWatchList();
-  }
-});
-
-renderWatchList();
-</script>
 </body>
 </html>
