@@ -13,7 +13,6 @@
 </head>
 
 <body>
-  <!-- ================= NAVIGATION ================= -->
   <header>
     <nav class="navbar">
       <div class="logo">
@@ -35,7 +34,6 @@
     </nav>
   </header>
 
-  <!-- ================= HERO ================= -->
   <section class="hero" id="home">
     <div class="hero-content">
       <h1>Track Every Anime You Love</h1>
@@ -46,11 +44,9 @@
       </div>
     </div>
     <div class="hero-image">
-      <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=80" alt="Anime Banner">
+      <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=700&q=80" alt="Anime Banner">
     </div>
   </section>
-
-  <!-- ================= SEARCH ================= -->
   <section class="search-section">
     <div class="search-box">
       <i class="fa-solid fa-magnifying-glass"></i>
@@ -59,118 +55,118 @@
     <div class="filters">
       <select id="genreFilter">
         <option value="all">All Genres</option>
-        <option>Action</option>
-        <option>Adventure</option>
-        <option>Fantasy</option>
-        <option>Comedy</option>
-        <option>Romance</option>
-        <option>Sci-Fi</option>
-        <option>Mystery</option>
-        <option>Drama</option>
-        <option>Slice of Life</option>
-        <option>Sports</option>
+        <option>Action</option><option>Adventure</option><option>Fantasy</option>
+        <option>Comedy</option><option>Romance</option><option>Sci-Fi</option>
+        <option>Mystery</option><option>Drama</option><option>Slice of Life</option>
       </select>
       <select id="statusFilter">
         <option value="all">All Status</option>
-        <option>Watching</option>
-        <option>Completed</option>
-        <option>Plan to Watch</option>
-        <option>Dropped</option>
-        <option>On Hold</option>
+        <option>Watching</option><option>Completed</option><option>Plan to Watch</option>
       </select>
       <select id="sortFilter">
         <option value="rating">Highest Rated</option>
-        <option value="name">A-Z</option>
-        <option value="year">Newest</option>
+        <option value="name">A-Z</option><option value="year">Newest</option>
       </select>
     </div>
   </section>
 
-  <!-- ================= TRENDING ================= -->
   <section id="trending" class="section">
     <div class="section-title">
       <h2>🔥 Trending This Season</h2>
       <a href="#">View All</a>
     </div>
     <div id="trendingContainer" class="anime-grid">
-      <div class="anime-card">
-        <img src="https://cdn.myanimelist.net/images/anime/1988/134791.jpg" alt="Solo Leveling">
-        <h3>Solo Leveling</h3>
-        <p>Action • Fantasy • 2024</p>
-      </div>
-      <div class="anime-card">
-        <img src="https://cdn.myanimelist.net/images/anime/1764/134792.jpg" alt="Demon Slayer: Hashira Training">
-        <h3>Demon Slayer: Hashira Training</h3>
-        <p>Action • Adventure • 2024</p>
-      </div>
-      <div class="anime-card">
-        <img src="https://cdn.myanimelist.net/images/anime/1208/134793.jpg" alt="Kaiju No. 8">
-        <h3>Kaiju No. 8</h3>
-        <p>Sci‑Fi • Comedy • 2024</p>
-      </div>
+      <!-- 15 anime cards -->
+      <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/1988/134791.jpg" alt="Solo Leveling"><h3>Solo Leveling</h3><p>Action • Fantasy • 2024</p></div>
+      <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/1764/134792.jpg" alt="Demon Slayer"><h3>Demon Slayer: Hashira Training</h3><p>Action • Adventure • 2024</p></div>
+      <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/1208/134793.jpg" alt="Kaiju No. 8"><h3>Kaiju No. 8</h3><p>Sci‑Fi • Comedy • 2024</p></div>
+      <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/4/19644.jpg" alt="Naruto"><h3>Naruto</h3><p>Action • Adventure • 2002–2017</p></div>
+      <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/3/40451.jpg" alt="Jujutsu Kaisen"><h3>Jujutsu Kaisen</h3><p>Action • Supernatural • 2020</p></div>
+      <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/5/17407.jpg" alt="Attack on Titan"><h3>Attack on Titan</h3><p>Action • Drama • 2013–2023</p></div>
+      <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/10/78745.jpg" alt="My Hero Academia"><h3>My Hero Academia</h3><p>Action • Comedy • 2016–2026</p></div>
+      <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/1223/96541.jpg" alt="Chainsaw Man"><h3>Chainsaw Man</h3><p>Action • Horror • 2022</p></div>
+      <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/13/17405.jpg" alt="One Piece"><h3>One Piece</h3><p>Adventure • Fantasy • 1999–2026</p></div>
+      <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/11/39717.jpg" alt="Bleach"><h3>Bleach: Thousand‑Year Blood War</h3><p>Action • Supernatural • 2023</p></div>
+      <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/7/3791.jpg" alt="Death Note"><h3>Death Note</h3><p>Mystery • Thriller • 2006</p></div>
+      <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/12/76049.jpg" alt="Tokyo Ghoul"><h3>Tokyo Ghoul</h3><p>Horror • Drama • 2014</p></div>
+      <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/1988/134791.jpg" alt="Spy x Family"><h3>Spy × Family</h3><p>Comedy • Action • 2022</p></div>
+      <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/1988/134791.jpg" alt="Mashle"><h3>Mashle: Magic and Muscles</h3><p>Comedy • Fantasy • 2023</p></div>
+      <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/1988/134791.jpg" alt="Blue Lock"><h3>Blue Lock</h3><p>Sports • Action • 2022</p></div>
     </div>
   </section>
-
-  <!-- ================= TOP RATED ================= -->
   <section id="toprated" class="section">
     <div class="section-title">
       <h2>⭐ Top Rated Anime</h2>
       <a href="#">View All</a>
     </div>
     <div id="topRatedContainer" class="anime-grid">
-      <div class="anime-card">
-        <img src="https://cdn.myanimelist.net/images/anime/5/17407.jpg" alt="Attack on Titan">
-        <h3>Attack on Titan</h3>
-        <p>Action • Drama • 2013–2023</p>
-      </div>
-      <div class="anime-card">
-        <img src="https://cdn.myanimelist.net/images/anime/3/40451.jpg" alt="Jujutsu Kaisen">
-        <h3>Jujutsu Kaisen</h3>
-        <p>Action • Supernatural • 2020</p>
-      </div>
-      <div class="anime-card">
-        <img src="https://cdn.myanimelist.net/images/anime/10/78745.jpg" alt="My Hero Academia">
-        <h3>My Hero Academia</h3>
-        <p>Action • Comedy • 2016–2026</p>
-      </div>
+      <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/5/17407.jpg" alt="Attack on Titan"><h3>Attack on Titan</h3><p>Action • Drama • 2013–2023</p></div>
+      <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/3/40451.jpg" alt="Jujutsu Kaisen"><h3>Jujutsu Kaisen</h3><p>Action • Supernatural • 2020</p></div>
+      <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/4/19644.jpg" alt="Naruto"><h3>Naruto</h3><p>Action • Adventure • 2002–2017</p></div>
+      <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/6/73245.jpg" alt="Fullmetal Alchemist: Brotherhood"><h3>Fullmetal Alchemist: Brotherhood</h3><p>Action • Drama • 2009</p></div>
+      <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/7/3791.jpg" alt="Death Note"><h3>Death Note</h3><p>Mystery • Thriller • 2006</p></div>
+      <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/10/78745.jpg" alt="My Hero Academia"><h3>My Hero Academia</h3><p>Action • Comedy • 2016–2026</p></div>
+      <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/11/39717.jpg" alt="Bleach"><h3>Bleach: Thousand‑Year Blood War</h3><p>Action • Supernatural • 2023</p></div>
+      <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/12/76049.jpg" alt="Tokyo Ghoul"><h3>Tokyo Ghoul</h3><p>Horror • Drama • 2014</p></div>
+      <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/13/17405.jpg" alt="One Piece"><h3>One Piece</h3><p>Adventure • Fantasy • 1999–2026</p></div>
+      <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/14/17406.jpg" alt="Hunter x Hunter"><h3>Hunter × Hunter</h3><p>Adventure • Action • 2011–2014</p></div>
+      <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/15/17407.jpg" alt="Code Geass"><h3>Code Geass</h3><p>Action • Mecha • 2006</p></div>
+      <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/16/17408.jpg" alt="Steins;Gate"><h3>Steins;Gate</h3><p>Sci‑Fi • Thriller • 2011</p></div>
+      <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/17/17409.jpg" alt="Demon Slayer"><h3>Demon Slayer</h3><p>Action • Adventure • 2019–2026</p></div>
+      <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/18/17410.jpg" alt="Vinland Saga"><h3>Vinland Saga</h3><p>Action • Historical • 2019–2023</p></div>
+      <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/19/17411.jpg" alt="Mob Psycho 100"><h3>Mob Psycho 100</h3><p>Comedy • Action • 2016–2022</p></div>
     </div>
   </section>
-  <!-- ================= GENRES ================= -->
   <section id="genres" class="section">
+    <div class="section-title">
+      <h2>🎭 Explore Genres</h2>
+    </div>
     <div class="genre-grid">
       <button class="genre-btn">Action</button>
       <button class="genre-btn">Adventure</button>
       <button class="genre-btn">Fantasy</button>
       <button class="genre-btn">Comedy</button>
       <button class="genre-btn">Romance</button>
-      <button class="genre-btn">Sci-Fi</button>
+      <button class="genre-btn">Sci‑Fi</button>
       <button class="genre-btn">Sports</button>
       <button class="genre-btn">Mystery</button>
       <button class="genre-btn">Drama</button>
       <button class="genre-btn">Horror</button>
+      <button class="genre-btn">Slice of Life</button>
+      <button class="genre-btn">Historical</button>
+      <button class="genre-btn">Music</button>
+      <button class="genre-btn">Supernatural</button>
+      <button class="genre-btn">Psychological</button>
     </div>
   </section>
-
-  <!-- ================= WATCH LIST ================= -->
   <section id="watchlist" class="section">
-    <h2>Your Watch List</h2>
+    <h2>Your Watch List</h2>
     <div class="watch-input">
       <input type="text" id="watchInput" placeholder="Add anime...">
       <button id="addAnime">Add</button>
     </div>
-    <div id="watchList"></div>
+    <div id="watchList">
+      <div class="watch-item"><span>Solo Leveling</span><button class="remove-btn">Remove</button></div>
+      <div class="watch-item"><span>Attack on Titan</span><button class="remove-btn">Remove</button></div>
+      <div class="watch-item"><span>Jujutsu Kaisen</span><button class="remove-btn">Remove</button></div>
+      <div class="watch-item"><span>One Piece</span><button class="remove-btn">Remove</button></div>
+      <div class="watch-item"><span>Bleach</span><button class="remove-btn">Remove</button></div>
+    </div>
   </section>
-
-  <!-- ================= DASHBOARD ================= -->
   <section id="dashboard" class="section">
     <h2>Your Statistics</h2>
     <div class="stats-grid">
-      <div class="stat-card"><h3 id="totalAnime">0</h3><p>Total Anime</p></div>
-      <div class="stat-card"><h3 id="completedAnime">0</h3><p>Completed</p></div>
-      <div class="stat-card"><h3 id="watchingAnime">0</h3><p>Watching</p></div>
-      <div class="stat-card"><h3 id="episodesWatched">0</h3><p>Episodes Watched</p></div>
+      <div class="stat-card"><h3 id="totalAnime">50</h3><p>Total Anime</p></div>
+      <div class="stat-card"><h3 id="completedAnime">20</h3><p>Completed</p></div>
+      <div class="stat-card"><h3 id="watchingAnime">10</h3><p>Watching</p></div>
+      <div class="stat-card"><h3 id="episodesWatched">1200</h3><p>Episodes Watched</p></div>
     </div>
   </section>
 
   <footer>
-    <p>© 2026 AnimeVerse — Made with ❤️
+    <p>© 2026 AnimeVerse — Made with ❤️ by Manoj</p>
+  </footer>
+
+  <script src="anime.js"></script>
+</body>
+</html>
