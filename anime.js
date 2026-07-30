@@ -24,6 +24,16 @@ suggestionsBox.addEventListener("click", e => {
 // ===============================
 
 // Fetch top anime from Jikan API
+if (anime.trailer && anime.trailer.url) {
+  card.innerHTML += `
+    <iframe width="250" height="140"
+      src="${anime.trailer.embed_url}"
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
+  `;
+}
+
 fetch("https://api.jikan.moe/v4/top/anime")
   .then(res => res.json())
   .then(data => {
