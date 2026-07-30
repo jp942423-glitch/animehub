@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Settings - AnimeVerse</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>⚙️ Customize Your AnimeVerse</h1>
+  <label>Theme:
+    <select id="themeSelect">
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+    </select>
+  </label>
+  <label>Font Size:
+    <input type="range" id="fontSize" min="14" max="22" value="16">
+  </label>
+
+  <script>
+    const themeSelect = document.getElementById("themeSelect");
+    const fontSize = document.getElementById("fontSize");
+
+    themeSelect.addEventListener("change", () => {
+      document.body.className = themeSelect.value === "dark" ? "dark-mode" : "";
+      localStorage.setItem("theme", themeSelect.value);
+    });
+
+    fontSize.addEventListener("input", () => {
+      document.body.style.fontSize = fontSize.value + "px";
+      localStorage.setItem("fontSize", fontSize.value);
+    });
+
+    // Load saved settings
+    document.body.className = localStorage.getItem("theme") === "dark" ? "dark-mode" : "";
+    document.body.style.fontSize = localStorage.getItem("fontSize") + "px";
+  </script>
+</body>
+</html>
