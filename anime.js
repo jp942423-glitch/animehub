@@ -104,7 +104,7 @@ updateLeaderboard();
 // ===============================
 
 // Load top anime (popular and old)
-fetch("https://api.jikan.moe/v4/top/anime?limit=500")
+fetch("https://api.jikan.moe/v4/top/anime?limit=100")
   .then(res => res.json())
   .then(data => {
     const trendingContainer = document.getElementById("trendingContainer");
@@ -150,4 +150,4 @@ loadNewReleases();
 // Optional Upgrade: Auto Refresh
 // ===============================
 // Refresh new releases every 6 hours automatically
-setInterval(loadNewReleases, 21600000); // 6 hours = 6 × 60 × 60 × 1000
+setInterval(loadNewReleases, 21600000); // 6 hours
