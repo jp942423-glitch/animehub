@@ -66,3 +66,35 @@ addAnimeBtn.addEventListener("click", () => {
     item.remove();
   });
 });
+// Load 100 anime instead of 50
+fetch("https://api.jikan.moe/v4/top/anime")
+  .then(res => res.json())
+  .then(data => {
+    const trendingContainer = document.getElementById("trendingContainer");
+    const topRatedContainer = document.getElementById("topRatedContainer");
+
+    // First 50 → Trending
+    data.data.slice(0, 50).forEach(anime => {
+      const card = document.createElement("div");
+      card.className = "anime-card";
+      card.innerHTML = `
+        <img src="${anime.images.jpg.image_url}" alt="${anime.title}">
+        <h3>${anime.title}</h3>
+        <p>${anime.type} • ${anime.year || "Unknown"}</p>
+      `;
+      trendingContainer.appendChild(card);
+    });
+
+    // Next 50 → Top Rated
+    data.data.slice(50, 100).forEach(anime => {
+      const card = document.createElement("div");
+      card.className = "anime-card";
+      card.innerHTML = `
+        <img src="${anime.images.jpg.image_url}" alt="${anime.title}">
+        <h3>${anime.title}</h3>
+        <p>${anime.type} • ${anime.year || "Unknown"}</p>
+      `;
+      topRatedContainer.appendChild(card);
+    });
+  })
+  .catch(err => console.error("Error loading anime:", err));
