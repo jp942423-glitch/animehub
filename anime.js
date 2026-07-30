@@ -98,3 +98,41 @@ fetch("https://api.jikan.moe/v4/top/anime")
     });
   })
   .catch(err => console.error("Error loading anime:", err));
+fetch("https://api.jikan.moe/v4/top/anime?limit=50")
+  .then(res => res.json())
+  .then(data => {
+    const trendingContainer = document.getElementById("trendingContainer");
+    trendingContainer.innerHTML = "";
+
+    data.data.forEach(anime => {
+      const card = document.createElement("div");
+      card.className = "anime-card";
+      card.innerHTML = `
+        <img src="${anime.images.jpg.image_url}" alt="${anime.title}">
+        <h3>${anime.title}</h3>
+        <p>${anime.type} • ${anime.year || "Unknown"}</p>
+        <p>⭐ ${anime.score || "N/A"} | Episodes: ${anime.episodes || "?"}</p>
+        <p>${anime.synopsis ? anime.synopsis.substring(0, 120) + "..." : "No description available."}</p>
+      `;
+      trendingContainer.appendChild(card);
+    });
+  })
+  .catch(err => console.error("Error loading anime:", err));
+
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById("topRatedContainer");
+    container.innerHTML = "";
+    data.data.Page.media.forEach(anime => {
+      const card = document.createElement("div");
+      card.className = "anime-card";
+      card.innerHTML = `
+        <img src="${anime.coverImage.large}" alt="${anime.title.romaji}">
+        <h3>${anime.title.romaji}</h3>
+        <p>${anime.genres.join(", ")}</p>
+        <p>⭐ ${anime.averageScore} | Episodes: ${anime.episodes}</p>
+        <p>${anime.description.substring(0, 120)}...</p>
+      `;
+      container.appendChild(card);
+    });
+  });
