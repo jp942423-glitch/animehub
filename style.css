@@ -517,3 +517,45 @@ body.dark-mode footer {
   object-fit: cover;
   border-radius: 8px;
 }
+/* ===== Loading Screen ===== */
+#loadingScreen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #0d0d0d;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.loader {
+  border: 6px solid #333;
+  border-top: 6px solid #ec4899;
+  border-radius: 50%;
+  width: 50px; height: 50px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ===== Scroll to Top Button ===== */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px; right: 30px;
+  background: linear-gradient(135deg, #ec4899, #6d28d9);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 45px; height: 45px;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+#scrollTopBtn:hover {
+  transform: scale(1.1);
+}
