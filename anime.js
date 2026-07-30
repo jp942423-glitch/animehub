@@ -136,3 +136,4 @@ fetch("https://api.jikan.moe/v4/top/anime?limit=50")
       container.appendChild(card);
     });
   });
+fetch("https://api.jikan.moe/v4/seasons/now")
