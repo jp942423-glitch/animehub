@@ -1,8 +1,16 @@
+// ===============================
+// AnimeVerse Dynamic Loader
+// ===============================
+
+// Fetch top anime from Jikan API
 fetch("https://api.jikan.moe/v4/top/anime")
   .then(res => res.json())
   .then(data => {
-    const container = document.getElementById("trendingContainer");
-    data.data.slice(0, 20).forEach(anime => {
+    const trendingContainer = document.getElementById("trendingContainer");
+    const topRatedContainer = document.getElementById("topRatedContainer");
+
+    // Load first 25 anime into Trending
+    data.data.slice(0, 25).forEach(anime => {
       const card = document.createElement("div");
       card.className = "anime-card";
       card.innerHTML = `
@@ -10,6 +18,51 @@ fetch("https://api.jikan.moe/v4/top/anime")
         <h3>${anime.title}</h3>
         <p>${anime.type} • ${anime.year || "Unknown"}</p>
       `;
-      container.appendChild(card);
+      trendingContainer.appendChild(card);
     });
+
+    // Load next 25 anime into Top Rated
+    data.data.slice(25, 50).forEach(anime => {
+      const card = document.createElement("div");
+      card.className = "anime-card";
+      card.innerHTML = `
+        <img src="${anime.images.jpg.image_url}" alt="${anime.title}">
+        <h3>${anime.title}</h3>
+        <p>${anime.type} • ${anime.year || "Unknown"}</p>
+      `;
+      topRatedContainer.appendChild(card);
+    });
+  })
+  .catch(err => {
+    console.error("Error loading anime:", err);
   });
+
+// ===============================
+// Dark Mode Toggle
+// ===============================
+const themeToggle = document.getElementById("themeToggle");
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+});
+
+// ===============================
+// Watch List System
+// ===============================
+const addAnimeBtn = document.getElementById("addAnime");
+const watchInput = document.getElementById("watchInput");
+const watchList = document.getElementById("watchList");
+
+addAnimeBtn.addEventListener("click", () => {
+  const name = watchInput.value.trim();
+  if (!name) return;
+
+  const item = document.createElement("div");
+  item.className = "watch-item";
+  item.innerHTML = `<span>${name}</span><button class="remove-btn">Remove</button>`;
+  watchList.appendChild(item);
+  watchInput.value = "";
+
+  item.querySelector(".remove-btn").addEventListener("click", () => {
+    item.remove();
+  });
+});
