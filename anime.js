@@ -1,3 +1,8 @@
+// ===============================
+// AnimeVerse Dynamic Loader
+// ===============================
+
+// 🔍 Search Autocomplete
 const searchInput = document.getElementById("searchInput");
 const suggestionsBox = document.createElement("div");
 suggestionsBox.className = "suggestions";
@@ -19,54 +24,6 @@ suggestionsBox.addEventListener("click", e => {
     suggestionsBox.innerHTML = "";
   }
 });
-// ===============================
-// AnimeVerse Dynamic Loader
-// ===============================
-
-// Fetch top anime from Jikan API
-if (anime.trailer && anime.trailer.url) {
-  card.innerHTML += `
-    <iframe width="250" height="140"
-      src="${anime.trailer.embed_url}"
-      frameborder="0"
-      allowfullscreen>
-    </iframe>
-  `;
-}
-
-fetch("https://api.jikan.moe/v4/top/anime")
-  .then(res => res.json())
-  .then(data => {
-    const trendingContainer = document.getElementById("trendingContainer");
-    const topRatedContainer = document.getElementById("topRatedContainer");
-
-    // Load first 25 anime into Trending
-    data.data.slice(0, 25).forEach(anime => {
-      const card = document.createElement("div");
-      card.className = "anime-card";
-      card.innerHTML = `
-        <img src="${anime.images.jpg.image_url}" alt="${anime.title}">
-        <h3>${anime.title}</h3>
-        <p>${anime.type} • ${anime.year || "Unknown"}</p>
-      `;
-      trendingContainer.appendChild(card);
-    });
-
-    // Load next 25 anime into Top Rated
-    data.data.slice(25, 50).forEach(anime => {
-      const card = document.createElement("div");
-      card.className = "anime-card";
-      card.innerHTML = `
-        <img src="${anime.images.jpg.image_url}" alt="${anime.title}">
-        <h3>${anime.title}</h3>
-        <p>${anime.type} • ${anime.year || "Unknown"}</p>
-      `;
-      topRatedContainer.appendChild(card);
-    });
-  })
-  .catch(err => {
-    console.error("Error loading anime:", err);
-  });
 
 // ===============================
 // Dark Mode Toggle
@@ -97,79 +54,10 @@ addAnimeBtn.addEventListener("click", () => {
     item.remove();
   });
 });
-// Load 100 anime instead of 50
-fetch("https://api.jikan.moe/v4/top/anime")
-  .then(res => res.json())
-  .then(data => {
-    const trendingContainer = document.getElementById("trendingContainer");
-    const topRatedContainer = document.getElementById("topRatedContainer");
 
-    // First 50 → Trending
-    data.data.slice(0, 50).forEach(anime => {
-      const card = document.createElement("div");
-      card.className = "anime-card";
-      card.innerHTML = `
-        <img src="${anime.images.jpg.image_url}" alt="${anime.title}">
-        <h3>${anime.title}</h3>
-        <p>${anime.type} • ${anime.year || "Unknown"}</p>
-      `;
-      trendingContainer.appendChild(card);
-    });
-
-    // Next 50 → Top Rated
-    data.data.slice(50, 100).forEach(anime => {
-      const card = document.createElement("div");
-      card.className = "anime-card";
-      card.innerHTML = `
-        <img src="${anime.images.jpg.image_url}" alt="${anime.title}">
-        <h3>${anime.title}</h3>
-        <p>${anime.type} • ${anime.year || "Unknown"}</p>
-      `;
-      topRatedContainer.appendChild(card);
-    });
-  })
-  .catch(err => console.error("Error loading anime:", err));
-fetch("https://api.jikan.moe/v4/top/anime?limit=50")
-  .then(res => res.json())
-  .then(data => {
-    const trendingContainer = document.getElementById("trendingContainer");
-    trendingContainer.innerHTML = "";
-
-    data.data.forEach(anime => {
-      const card = document.createElement("div");
-      card.className = "anime-card";
-      card.innerHTML = `
-        <img src="${anime.images.jpg.image_url}" alt="${anime.title}">
-        <h3>${anime.title}</h3>
-        <p>${anime.type} • ${anime.year || "Unknown"}</p>
-        <p>⭐ ${anime.score || "N/A"} | Episodes: ${anime.episodes || "?"}</p>
-        <p>${anime.synopsis ? anime.synopsis.substring(0, 120) + "..." : "No description available."}</p>
-      `;
-      trendingContainer.appendChild(card);
-    });
-  })
-  .catch(err => console.error("Error loading anime:", err));
-
-  .then(res => res.json())
-  .then(data => {
-    const container = document.getElementById("topRatedContainer");
-    container.innerHTML = "";
-    data.data.Page.media.forEach(anime => {
-      const card = document.createElement("div");
-      card.className = "anime-card";
-      card.innerHTML = `
-        <img src="${anime.coverImage.large}" alt="${anime.title.romaji}">
-        <h3>${anime.title.romaji}</h3>
-        <p>${anime.genres.join(", ")}</p>
-        <p>⭐ ${anime.averageScore} | Episodes: ${anime.episodes}</p>
-        <p>${anime.description.substring(0, 120)}...</p>
-      `;
-      container.appendChild(card);
-    });
-  });
-fetch("https://api.jikan.moe/v4/seasons/now")
-fetch("data.json").then(res => res.json()).then(data => console.log(data));
-// Add rating and comment system
+// ===============================
+// Rating + Comment System
+// ===============================
 document.addEventListener("click", e => {
   if (e.target.classList.contains("rate-btn")) {
     const rating = prompt("Rate this anime (1–10):");
@@ -186,6 +74,10 @@ document.addEventListener("click", e => {
     }
   }
 });
+
+// ===============================
+// Leaderboard System
+// ===============================
 const leaderboardList = document.getElementById("leaderboardList");
 const leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || {};
 
@@ -206,3 +98,56 @@ function updateLeaderboard() {
     .join("");
 }
 updateLeaderboard();
+
+// ===============================
+// AnimeVerse Auto Loader
+// ===============================
+
+// Load top anime (popular and old)
+fetch("https://api.jikan.moe/v4/top/anime?limit=100")
+  .then(res => res.json())
+  .then(data => {
+    const trendingContainer = document.getElementById("trendingContainer");
+    trendingContainer.innerHTML = "";
+    data.data.forEach(anime => {
+      const card = document.createElement("div");
+      card.className = "anime-card";
+      card.innerHTML = `
+        <img src="${anime.images.jpg.image_url}" alt="${anime.title}">
+        <h3>${anime.title}</h3>
+        <p>${anime.type} • ${anime.year || "Unknown"}</p>
+        <p>⭐ ${anime.score || "N/A"} | Episodes: ${anime.episodes || "?"}</p>
+      `;
+      trendingContainer.appendChild(card);
+    });
+  })
+  .catch(err => console.error("Error loading top anime:", err));
+
+// Load currently airing anime (new releases)
+function loadNewReleases() {
+  fetch("https://api.jikan.moe/v4/seasons/now")
+    .then(res => res.json())
+    .then(data => {
+      const newContainer = document.getElementById("newReleasesContainer");
+      newContainer.innerHTML = "";
+      data.data.forEach(anime => {
+        const card = document.createElement("div");
+        card.className = "anime-card";
+        card.innerHTML = `
+          <img src="${anime.images.jpg.image_url}" alt="${anime.title}">
+          <h3>${anime.title}</h3>
+          <p>${anime.type} • ${anime.year || "Unknown"}</p>
+          <p>⭐ ${anime.score || "N/A"} | Episodes: ${anime.episodes || "?"}</p>
+        `;
+        newContainer.appendChild(card);
+      });
+    })
+    .catch(err => console.error("Error loading new releases:", err));
+}
+loadNewReleases();
+
+// ===============================
+// Optional Upgrade: Auto Refresh
+// ===============================
+// Refresh new releases every 6 hours automatically
+setInterval(loadNewReleases, 21600000); // 6 hours = 6 × 60 × 60 × 1000
