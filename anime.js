@@ -1,3 +1,24 @@
+const searchInput = document.getElementById("searchInput");
+const suggestionsBox = document.createElement("div");
+suggestionsBox.className = "suggestions";
+searchInput.parentElement.appendChild(suggestionsBox);
+
+searchInput.addEventListener("input", async () => {
+  const query = searchInput.value.trim();
+  if (!query) return (suggestionsBox.innerHTML = "");
+  const res = await fetch(`https://api.jikan.moe/v4/anime?q=${query}&limit=5`);
+  const data = await res.json();
+  suggestionsBox.innerHTML = data.data
+    .map(a => `<div class="suggestion">${a.title}</div>`)
+    .join("");
+});
+
+suggestionsBox.addEventListener("click", e => {
+  if (e.target.classList.contains("suggestion")) {
+    searchInput.value = e.target.textContent;
+    suggestionsBox.innerHTML = "";
+  }
+});
 // ===============================
 // AnimeVerse Dynamic Loader
 // ===============================
