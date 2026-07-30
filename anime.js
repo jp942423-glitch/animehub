@@ -137,3 +137,4 @@ fetch("https://api.jikan.moe/v4/top/anime?limit=50")
     });
   });
 fetch("https://api.jikan.moe/v4/seasons/now")
+fetch("data.json").then(res => res.json()).then(data => console.log(data));
