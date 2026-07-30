@@ -176,3 +176,23 @@ document.addEventListener("click", e => {
     }
   }
 });
+const leaderboardList = document.getElementById("leaderboardList");
+const leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || {};
+
+document.addEventListener("click", e => {
+  if (e.target.classList.contains("anime-card")) {
+    const title = e.target.querySelector("h3").textContent;
+    leaderboard[title] = (leaderboard[title] || 0) + 1;
+    localStorage.setItem("leaderboard", JSON.stringify(leaderboard));
+    updateLeaderboard();
+  }
+});
+
+function updateLeaderboard() {
+  const sorted = Object.entries(leaderboard).sort((a, b) => b[1] - a[1]);
+  leaderboardList.innerHTML = sorted
+    .slice(0, 10)
+    .map(([title, count]) => `<li>${title} — ${count} views</li>`)
+    .join("");
+}
+updateLeaderboard();
