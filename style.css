@@ -511,3 +511,9 @@ body.dark-mode footer {
   background: linear-gradient(135deg, #ec4899, #6d28d9);
   color: #fff;
 }
+.anime-card img {
+  width: 160px;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 8px;
+}
