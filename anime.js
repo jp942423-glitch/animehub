@@ -104,7 +104,7 @@ updateLeaderboard();
 // ===============================
 
 // Load top anime (popular and old)
-fetch("https://api.jikan.moe/v4/top/anime?limit=100")
+fetch("https://api.jikan.moe/v4/top/anime?limit=500")
   .then(res => res.json())
   .then(data => {
     const trendingContainer = document.getElementById("trendingContainer");
