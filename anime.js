@@ -138,3 +138,20 @@ fetch("https://api.jikan.moe/v4/top/anime?limit=50")
   });
 fetch("https://api.jikan.moe/v4/seasons/now")
 fetch("data.json").then(res => res.json()).then(data => console.log(data));
+// Add rating and comment system
+document.addEventListener("click", e => {
+  if (e.target.classList.contains("rate-btn")) {
+    const rating = prompt("Rate this anime (1–10):");
+    if (rating) e.target.parentElement.querySelector(".user-rating").textContent = `⭐ ${rating}/10`;
+  }
+
+  if (e.target.classList.contains("comment-btn")) {
+    const comment = prompt("Add your comment:");
+    if (comment) {
+      const commentBox = e.target.parentElement.querySelector(".comments");
+      const p = document.createElement("p");
+      p.textContent = comment;
+      commentBox.appendChild(p);
+    }
+  }
+});
